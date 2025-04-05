@@ -1,0 +1,155 @@
+body
+{
+    font-family: monospace;
+    font-size: 20px;
+    background-color: black;
+    text-align: left;
+    color: white;
+}
+#save
+{
+    display: flex;
+    border: 2px solid white;
+    text-align: center;
+    margin: 40px 0 80px 0;
+}
+.diffs
+{
+    display: flex;
+    border: 2px solid white;
+    text-align: center;
+    margin: 40px 0 80px 0;
+}
+#list
+{
+    list-style: none;
+    padding: 0;
+}
+.chart
+{
+    border: 2px solid white;
+    margin: 20px 0;
+    display: flex;
+    text-align: center;
+}
+.stat
+{
+    margin: 0;
+    font-family: monospace;
+    font-size: 20px;
+    border: 2px solid white;
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+button
+{
+    margin: 10px;
+    font-family: monospace;
+    font-size: 20px;
+    border: 2px solid white;
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+}
+button:hover
+{
+    margin: 10px;
+    font-family: monospace;
+    font-size: 20px;
+    border: 2px solid white;
+    background-color: purple;
+    color: cyan;
+    cursor: pointer;
+    padding: 10px 20px;
+}
+.clickable:hover
+{
+    color: cyan;
+    cursor: pointer;
+}
+#sort
+{
+    border: 2px solid white;
+    margin: 40px 0 80px 0;
+    display: flex;
+    text-align: center;
+}
+#sort > button
+{
+    margin: 0;
+    border: 2px solid white;
+    flex-grow: 1;
+}
+.name
+{
+    flex: 1 0 0;
+}
+.lv
+{
+    width: 48px;
+}
+.notes
+{
+    width: 60px;
+}
+.lost
+{
+    width: 84px;
+}
+.score
+{
+    width: 84px;
+}
+.ct
+{
+    width: 36px;
+}
+.rate
+{
+    width: 60px;
+}
+.diffs > button
+{
+    margin: 0;
+    border: 2px solid white;
+    flex: 1 0 0;
+}
+#save > button
+{
+    margin: 0;
+    border: 2px solid white;
+    flex-grow: 1;
+}
+#info
+{
+    margin: 80px 0;
+}
+#pref4
+{
+    border: none;
+    cursor: default;
+}
+#stats
+{
+    text-align: center;
+    margin: 40px 0 80px 0;
+    border: 2px solid white;
+    display: flex;
+    flex-direction: column;
+}
+#stats > div
+{
+    display: flex;
+}
+#stats > div > span
+{
+    padding: 10px;
+    border: 2px solid white;
+    width: 48px;
+}
+.total
+{
+    flex-grow: 1;
+}

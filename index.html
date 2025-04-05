@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body onload="init()">
+        <a href="https://store.steampowered.com/app/2093940/vividstasis/">vivid/stasis</a>
+        <p>Saving:</p>
+        <div id="save">
+            <button onclick="save()">Copy</button>
+            <button onclick="load()">Paste</button>
+            <button onclick="reset()">Reset</button>
+        </div>
+        <p>Stats:</p>
+        <div id="stats">
+            <div>
+                <span class="total">Total score:</span>
+                <span>AAC:</span>
+                <span>AC:</span>
+                <span>FC:</span>
+                <span>All:</span>
+            </div>
+            <div>
+                <span class="total"></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div>
+                <span class="total"></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div>
+                <span class="total"></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div>
+                <span class="total"></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <p>Include:</p>
+        <div class="diffs">
+            <button id="pref0" onclick="toggleDiff(0)">Opening</button>
+            <button id="pref1" onclick="toggleDiff(1)">Middle</button>
+            <button id="pref2" onclick="toggleDiff(2)">Finale</button>
+            <button id="pref3" onclick="toggleDiff(3)">Encore</button>
+        </div>
+        <div class="diffs">
+            <button id="pref5" onclick="toggleDiff(5)">None</button>
+            <button id="pref6" onclick="toggleDiff(6)">FC</button>
+            <button id="pref7" onclick="toggleDiff(7)">AC</button>
+            <button id="pref8" onclick="toggleDiff(8)">AAC</button>
+        </div>
+        <p>Sort by:</p>
+        <div id="sort">
+            <button onclick="reverseCharts()">Reverse</button>
+            <button onclick="shuffleCharts()">Random</button>
+            <button onclick="sortCharts('index')">Default</button>
+            <button onclick="sortCharts('lv')">Level</button>
+            <button onclick="sortCharts('diff')">Difficulty</button>
+            <button onclick="sortCharts('name')">Title</button>
+            <button onclick="sortCharts('notes')">Note count</button>
+            <button onclick="sortCharts('lost')">Crits to AAC</button>
+            <button onclick="sortCharts('score')">Score</button>
+            <button onclick="sortCharts('ct')">Clear type</button>
+            <button onclick="sortCharts('rate')">Play rate</button>
+        </div>
+        <ul id="list"></ul>
+        <button id="pref4" onclick="toggleDiff(4)"></button>
+        <script src="charts.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>
