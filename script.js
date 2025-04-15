@@ -2,7 +2,7 @@ const byIndex = [];
 const prefs = [1, 1, 1, 1, 1, 1, 1, 1, 1];
 const data = {};
 const cts = ["", "FC", "AC", "AAC"];
-const ctCounts = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]];
+const ctCounts = [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]];
 const colours = ["#1aff55", "#1ab9ff", "#ff1a4a", "#c342ff", "#000000"];
 const ctColours =
 [
@@ -53,7 +53,7 @@ function update(li, chart, orig)
     stats[5].style.backgroundImage = ctColours[prefs[4]][chart.ct];
     for (let i = 0; i < 5; i++)
     {
-        for (let j = 0; j < 4; j++)
+        for (let j = 0; j < 5; j++)
             ctCounts[i][j] = 0;
     }
     for (let i in original)
@@ -65,8 +65,13 @@ function update(li, chart, orig)
             ctCounts[0][j] += data[i][j].score;
         }
     }
+    for (let i = 0; i < 5; i++)
+    {
+        for (let j = 0; j < 4; j++)
+            ctCounts[i][4] += ctCounts[i][j];
+    }
     const counts = document.getElementById("stats").children;
-    for (let i = 0; i < 4; i++)
+    for (let i = 0; i < 5; i++)
     {
         const countsT = counts[i + 1].children;
         for (let j = 1; j < 5; j++)
