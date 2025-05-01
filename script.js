@@ -1,5 +1,5 @@
 const byIndex = [];
-const prefs = [1, 1, 1, 1, 1, 1, 1, 1, 1];
+const prefs = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
 const data = {};
 const cts = ["", "FC", "AC", "AAC"];
 const ctCounts = [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]];
@@ -181,6 +181,7 @@ function reset()
 }
 function init()
 {
+    document.getElementById("ver").textContent = ver;
     const charts = document.getElementById("stats").children;
     const chartsT = charts[0].children;
     for (let i = 0; i < 4; i++)
@@ -199,8 +200,10 @@ function init()
     }
     for (let i = 0; i < 5; i++)
         document.getElementById("pref" + i).style.backgroundColor = colours[i];
-    for (let i = 0; i < 4; i++)
-        document.getElementById("pref" + (i + 5)).style.backgroundImage = ctColours[prefs[4]][i];
+    for (let i = 5; i < 9; i++)
+        document.getElementById("pref" + i).style.backgroundImage = ctColours[prefs[4]][i - 5];
+    for (let i = 9; i < 18; i++)
+        document.getElementById("pref" + i).style.backgroundColor = "green";
     for (let i in original)
     {
         for (let diff = 0; diff < original[i].length; diff++)
@@ -383,15 +386,19 @@ function toggleDiff(a)
     {
         if (a < 5)
             document.getElementById("pref" + a).style.backgroundColor = colours[a];
-        else
+        else if (a < 9)
             document.getElementById("pref" + a).style.backgroundImage = ctColours[prefs[4]][a - 5];
+        else
+            document.getElementById("pref" + a).style.backgroundColor = "green";
     }
     else
     {
         if (a < 5)
-            document.getElementById("pref" + a).style.backgroundColor = "#000000";
-        else
+            document.getElementById("pref" + a).style.backgroundColor = "black";
+        else if (a < 9)
             document.getElementById("pref" + a).style.backgroundImage = "linear-gradient(black)";
+        else
+            document.getElementById("pref" + a).style.backgroundColor = "black";
     }
     for (let i in original)
     {
@@ -400,8 +407,20 @@ function toggleDiff(a)
             const orig = original[i][j];
             const chart = data[i][j];
             const li = document.getElementById("c" + orig.index);
-            if (prefs[j] && prefs[data[i][j].ct + 5])
-                li.style.display = "flex";
+            if (prefs[j] && prefs[chart.ct + 5])
+            {
+                for (let k = 0; k < 9; k++)
+                {
+                    if (packs[k] <= orig.index && orig.index < packs[k + 1])
+                    {
+                        if (prefs[k + 9])
+                            li.style.display = "flex";
+                        else
+                            li.style.display = "none";
+                        break;
+                    }
+                }
+            }
             else
                 li.style.display = "none";
             li.children[5].style.backgroundImage = ctColours[prefs[4]][chart.ct];
