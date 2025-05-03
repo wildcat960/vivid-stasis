@@ -2379,7 +2379,7 @@ const original =
         {
             index: 403,
             lv: 13.8,
-            notes: 1897
+            notes: 1879
         }
     ],
     "-1":

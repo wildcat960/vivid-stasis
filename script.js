@@ -179,6 +179,75 @@ function reset()
     }
     localStorage.data = JSON.stringify(data);
 }
+function toggleDiff(a)
+{
+    prefs[a] = 1 - prefs[a];
+    localStorage.prefs = JSON.stringify(prefs);
+    if (prefs[a])
+    {
+        if (a < 5)
+            document.getElementById("pref" + a).style.backgroundColor = colours[a];
+        else if (a < 9)
+            document.getElementById("pref" + a).style.backgroundImage = ctColours[prefs[4]][a - 5];
+        else
+            document.getElementById("pref" + a).style.backgroundColor = "green";
+    }
+    else
+    {
+        if (a < 5)
+            document.getElementById("pref" + a).style.backgroundColor = "black";
+        else if (a < 9)
+            document.getElementById("pref" + a).style.backgroundImage = "linear-gradient(black)";
+        else
+            document.getElementById("pref" + a).style.backgroundColor = "black";
+    }
+    for (let i in original)
+    {
+        for (let j = 0; j < original[i].length; j++)
+        {
+            const orig = original[i][j];
+            const chart = data[i][j];
+            const li = document.getElementById("c" + orig.index);
+            if (prefs[j] && prefs[chart.ct + 5])
+            {
+                for (let k = 0; k < 9; k++)
+                {
+                    if (packs[k] <= orig.index && orig.index < packs[k + 1])
+                    {
+                        if (prefs[k + 9])
+                            li.style.display = "flex";
+                        else
+                            li.style.display = "none";
+                        break;
+                    }
+                }
+            }
+            else
+                li.style.display = "none";
+            li.children[5].style.backgroundImage = ctColours[prefs[4]][chart.ct];
+        }
+    }
+    const charts = document.getElementById("stats").children[0].children;
+    for (let i = 0; i < 4; i++)
+        charts[i + 1].style.backgroundImage = ctColours[prefs[4]][3 - i];
+    for (let i = 0; i < 4; i++)
+    {
+        if (prefs[i + 5])
+            document.getElementById("pref" + (i + 5)).style.backgroundImage = ctColours[prefs[4]][i];
+    }
+}
+function loadPrefs(b)
+{
+    for (let i = 0; i < b.length; i++)
+    {
+        if (i < prefs.length)
+        {
+            if (b[i] == 1)
+                continue;
+            toggleDiff(i);
+        }
+    }
+}
 function init()
 {
     document.getElementById("ver").textContent = ver;
@@ -263,6 +332,15 @@ function init()
     {
         if (localStorage)
             localStorage.data = JSON.stringify(data);
+    }
+    try
+    {
+        loadPrefs(JSON.parse(localStorage.prefs));
+    }
+    catch (e)
+    {
+        if (localStorage)
+            localStorage.prefs = JSON.stringify(prefs);
     }
 }
 function sortBy(aa, bb, stat)
@@ -378,60 +456,4 @@ function shuffleCharts()
     }
     for (let i of charts)
         list.appendChild(i);
-}
-function toggleDiff(a)
-{
-    prefs[a] = 1 - prefs[a];
-    if (prefs[a])
-    {
-        if (a < 5)
-            document.getElementById("pref" + a).style.backgroundColor = colours[a];
-        else if (a < 9)
-            document.getElementById("pref" + a).style.backgroundImage = ctColours[prefs[4]][a - 5];
-        else
-            document.getElementById("pref" + a).style.backgroundColor = "green";
-    }
-    else
-    {
-        if (a < 5)
-            document.getElementById("pref" + a).style.backgroundColor = "black";
-        else if (a < 9)
-            document.getElementById("pref" + a).style.backgroundImage = "linear-gradient(black)";
-        else
-            document.getElementById("pref" + a).style.backgroundColor = "black";
-    }
-    for (let i in original)
-    {
-        for (let j = 0; j < original[i].length; j++)
-        {
-            const orig = original[i][j];
-            const chart = data[i][j];
-            const li = document.getElementById("c" + orig.index);
-            if (prefs[j] && prefs[chart.ct + 5])
-            {
-                for (let k = 0; k < 9; k++)
-                {
-                    if (packs[k] <= orig.index && orig.index < packs[k + 1])
-                    {
-                        if (prefs[k + 9])
-                            li.style.display = "flex";
-                        else
-                            li.style.display = "none";
-                        break;
-                    }
-                }
-            }
-            else
-                li.style.display = "none";
-            li.children[5].style.backgroundImage = ctColours[prefs[4]][chart.ct];
-        }
-    }
-    const charts = document.getElementById("stats").children[0].children;
-    for (let i = 0; i < 4; i++)
-        charts[i + 1].style.backgroundImage = ctColours[prefs[4]][3 - i];
-    for (let i = 0; i < 4; i++)
-    {
-        if (prefs[i + 5])
-            document.getElementById("pref" + (i + 5)).style.backgroundImage = ctColours[prefs[4]][i];
-    }
 }
