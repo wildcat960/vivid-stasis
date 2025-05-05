@@ -447,7 +447,7 @@ const original =
         },
         {
             index: 75,
-            lv: 9.0,
+            lv: 8.0,
             notes: 1140
         },
         {
