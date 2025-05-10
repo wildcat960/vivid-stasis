@@ -1506,7 +1506,7 @@ const original =
         },
         {
             index: 255,
-            lv: 15.1,
+            lv: 15.5,
             notes: 1386
         },
         {
@@ -2378,7 +2378,7 @@ const original =
         },
         {
             index: 403,
-            lv: 13.8,
+            lv: 13.9,
             notes: 1879
         }
     ],
@@ -2822,7 +2822,7 @@ const original =
         },
         {
             index: 478,
-            lv: 14.0,
+            lv: 14.1,
             notes: 1768
         }
     ],
@@ -2886,7 +2886,7 @@ const original =
         },
         {
             index: 489,
-            lv: 15.6,
+            lv: 15.8,
             notes: 1986
         }
     ],
@@ -2982,7 +2982,7 @@ const original =
         {
             index: 505,
             lv: 14.5,
-            notes: 1601
+            notes: 1691
         }
     ],
     "Etiquette":
