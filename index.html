@@ -8,18 +8,12 @@
         <title id="ver"></title>
     </head>
     <body onload="init()">
-        <p>
-            This is a tool for
-            <a href="https://store.steampowered.com/app/2093940/vividstasis/">vivid/stasis</a>
-            by Hajimeli / Team Vividstasis and published by SKY HOUR WORKS, and is not officially endorsed or owned by Hajimeli or SKY HOUR WORKS.
-        </p>
-        <p>Saving:</p>
-        <div id="save">
-            <button onclick="save()">Copy</button>
-            <button onclick="load()">Paste</button>
-            <button onclick="reset()">Reset</button>
+        <div id="tabs">
+            <button onclick="switchTab(0)">Charts</button>
+            <button onclick="switchTab(1)">Profile</button>
+            <button onclick="switchTab(2)">Options</button>
+            <button onclick="switchTab(3)">Credits</button>
         </div>
-        <p>Stats:</p>
         <div id="stats">
             <div>
                 <span class="total">Total score:</span>
@@ -64,46 +58,61 @@
                 <span></span>
             </div>
         </div>
-        <p>Include:</p>
-        <div class="diffs">
-            <button id="pref0" onclick="toggleDiff(0)">Opening</button>
-            <button id="pref1" onclick="toggleDiff(1)">Middle</button>
-            <button id="pref2" onclick="toggleDiff(2)">Finale</button>
-            <button id="pref3" onclick="toggleDiff(3)">Encore</button>
+        <div id="charts">
+            <div class="diffs">
+                <button id="pref0" onclick="toggleDiff(0)">Opening</button>
+                <button id="pref1" onclick="toggleDiff(1)">Middle</button>
+                <button id="pref2" onclick="toggleDiff(2)">Finale</button>
+                <button id="pref3" onclick="toggleDiff(3)">Encore</button>
+            </div>
+            <div class="diffs">
+                <button id="pref5" onclick="toggleDiff(5)">None</button>
+                <button id="pref6" onclick="toggleDiff(6)">FC</button>
+                <button id="pref7" onclick="toggleDiff(7)">AC</button>
+                <button id="pref8" onclick="toggleDiff(8)">AAC</button>
+            </div>
+            <div class="diffs">
+                <button id="pref9" onclick="toggleDiff(9)">Chapter 1</button>
+                <button id="pref10" onclick="toggleDiff(10)">Chapter 2</button>
+                <button id="pref11" onclick="toggleDiff(11)">Chapter 3</button>
+                <button id="pref12" onclick="toggleDiff(12)">Chapter 4</button>
+                <button id="pref13" onclick="toggleDiff(13)">Final Chapter</button>
+                <button id="pref14" onclick="toggleDiff(14)">Betweenspace</button>
+                <button id="pref15" onclick="toggleDiff(15)">Shop Collection</button>
+                <button id="pref16" onclick="toggleDiff(16)">Collaboration Collection</button>
+                <button id="pref17" onclick="toggleDiff(17)">Sunrise Showdown</button>
         </div>
-        <div class="diffs">
-            <button id="pref5" onclick="toggleDiff(5)">None</button>
-            <button id="pref6" onclick="toggleDiff(6)">FC</button>
-            <button id="pref7" onclick="toggleDiff(7)">AC</button>
-            <button id="pref8" onclick="toggleDiff(8)">AAC</button>
+            <div id="sort">
+                <button onclick="reverseCharts()">Reverse</button>
+                <button onclick="shuffleCharts()">Random</button>
+                <button onclick="sortCharts('index')">Default</button>
+                <button onclick="sortCharts('lv')">Level</button>
+                <button onclick="sortCharts('diff')">Difficulty</button>
+                <button onclick="sortCharts('name')">Title</button>
+                <button onclick="sortCharts('notes')">Note count</button>
+                <button onclick="sortCharts('lost')">Crits to AAC</button>
+                <button onclick="sortCharts('score')">Score</button>
+                <button onclick="sortCharts('ct')">Clear type</button>
+                <button onclick="sortCharts('rate')">Play rate</button>
+            </div>
+            <ul id="list"></ul>
+            <button id="pref4" onclick="toggleDiff(4)"></button>
         </div>
-        <div class="diffs">
-            <button id="pref9" onclick="toggleDiff(9)">Chapter 1</button>
-            <button id="pref10" onclick="toggleDiff(10)">Chapter 2</button>
-            <button id="pref11" onclick="toggleDiff(11)">Chapter 3</button>
-            <button id="pref12" onclick="toggleDiff(12)">Chapter 4</button>
-            <button id="pref13" onclick="toggleDiff(13)">Final Chapter</button>
-            <button id="pref14" onclick="toggleDiff(14)">Betweenspace</button>
-            <button id="pref15" onclick="toggleDiff(15)">Shop Collection</button>
-            <button id="pref16" onclick="toggleDiff(16)">Collaboration Collection</button>
-            <button id="pref17" onclick="toggleDiff(17)">Sunrise Showdown</button>
+        <div id="save">
+            <button onclick="save()">Copy</button>
+            <button onclick="load()">Paste</button>
+            <button onclick="reset()">Reset</button>
         </div>
-        <p>Sort by:</p>
-        <div id="sort">
-            <button onclick="reverseCharts()">Reverse</button>
-            <button onclick="shuffleCharts()">Random</button>
-            <button onclick="sortCharts('index')">Default</button>
-            <button onclick="sortCharts('lv')">Level</button>
-            <button onclick="sortCharts('diff')">Difficulty</button>
-            <button onclick="sortCharts('name')">Title</button>
-            <button onclick="sortCharts('notes')">Note count</button>
-            <button onclick="sortCharts('lost')">Crits to AAC</button>
-            <button onclick="sortCharts('score')">Score</button>
-            <button onclick="sortCharts('ct')">Clear type</button>
-            <button onclick="sortCharts('rate')">Play rate</button>
+        <div id="info">
+            <p>This is a tool for
+            <a href="https://store.steampowered.com/app/2093940/vividstasis/">vivid/stasis</a>
+            by Hajimeli / Team Vividstasis and published by SKY HOUR WORKS, and is not officially endorsed or owned by Hajimeli or SKY HOUR WORKS.</p>
+            <div id="lax">
+                <a href="https://github.com/wildcat960/vivid-stasis/">Github</a>
+                <p>Made by wildcat960</p>
+                <p id="upd">Last updated 13.06.2025</p>
+            </div>
         </div>
-        <ul id="list"></ul>
-        <button id="pref4" onclick="toggleDiff(4)"></button>
         <script src="charts.js"></script>
         <script src="script.js"></script>
     </body>

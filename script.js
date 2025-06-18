@@ -1,9 +1,10 @@
 const byIndex = [];
-const prefs = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
+const prefs = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3];
 const data = {};
 const cts = ["", "FC", "AC", "AAC"];
 const ctCounts = [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]];
 const colours = ["#1aff55", "#1ab9ff", "#ff1a4a", "#c342ff", "#000000"];
+const tabs = [["charts", "block"], ["stats", "flex"], ["save", "flex"], ["info", "block"]];
 const ctColours =
 [
     [
@@ -236,21 +237,44 @@ function toggleDiff(a)
             document.getElementById("pref" + (i + 5)).style.backgroundImage = ctColours[prefs[4]][i];
     }
 }
+function switchTab(a)
+{
+    prefs[prefs.length - 1] = a;
+    localStorage.prefs = JSON.stringify(prefs);
+    let u = document.getElementById("tabs").children;
+    for (let i = 0; i < tabs.length; i++)
+    {
+        let t = document.getElementById(tabs[i][0]);
+        if (i == a)
+        {
+            t.style.display = tabs[i][1];
+            u[i].style.backgroundColor = "coral";
+        }
+        else
+        {
+            t.style.display = "none";
+            u[i].style.backgroundColor = "black";
+        }
+    }
+}
 function loadPrefs(b)
 {
     for (let i = 0; i < b.length; i++)
     {
-        if (i < prefs.length)
+        if (i < prefs.length - 1)
         {
-            if (b[i] == 1)
-                continue;
             toggleDiff(i);
+            if (b[i])
+                toggleDiff(i);
         }
+        else if (i < prefs.length)
+            switchTab(b[i]);
     }
 }
 function init()
 {
     document.getElementById("ver").textContent = ver;
+    document.getElementById("upd").textContent = upd
     const charts = document.getElementById("stats").children;
     const chartsT = charts[0].children;
     for (let i = 0; i < 4; i++)
@@ -267,12 +291,6 @@ function init()
             byIndex[original[i][j].index] = [i, j];
         }
     }
-    for (let i = 0; i < 5; i++)
-        document.getElementById("pref" + i).style.backgroundColor = colours[i];
-    for (let i = 5; i < 9; i++)
-        document.getElementById("pref" + i).style.backgroundImage = ctColours[prefs[4]][i - 5];
-    for (let i = 9; i < 18; i++)
-        document.getElementById("pref" + i).style.backgroundColor = "green";
     for (let i in original)
     {
         for (let diff = 0; diff < original[i].length; diff++)
@@ -339,6 +357,7 @@ function init()
     }
     catch (e)
     {
+        loadPrefs(prefs);
         if (localStorage)
             localStorage.prefs = JSON.stringify(prefs);
     }
