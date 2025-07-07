@@ -1,8 +1,8 @@
 const byIndex = [];
-const prefs = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3];
+const prefs = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3];
 const data = {};
 const cts = ["", "FC", "AC", "AAC"];
-const ctCounts = [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]];
+const ctCounts = [[0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]];
 const colours = ["#1aff55", "#1ab9ff", "#ff1a4a", "#c342ff", "#000000"];
 const tabs = [["charts", "block"], ["stats", "flex"], ["save", "flex"], ["info", "block"]];
 const ctColours =
@@ -52,7 +52,7 @@ function update(li, chart, orig)
     stats[6].textContent = Math.round(rate);
     stats[5].textContent = cts[chart.ct];
     stats[5].style.backgroundImage = ctColours[prefs[4]][chart.ct];
-    for (let i = 0; i < 5; i++)
+    for (let i = 0; i < 6; i++)
     {
         for (let j = 0; j < 5; j++)
             ctCounts[i][j] = 0;
@@ -61,12 +61,13 @@ function update(li, chart, orig)
     {
         for (let j = 0; j < original[i].length; j++)
         {
-            for (let k = 4 - data[i][j].ct; k < 5; k++)
+            for (let k = 5 - data[i][j].ct; k < 6; k++)
                 ctCounts[k][j]++;
             ctCounts[0][j] += data[i][j].score;
+            ctCounts[1][j] += 101 * original[i][j].notes - Math.round(data[i][j].score * original[i][j].notes / 10000);
         }
     }
-    for (let i = 0; i < 5; i++)
+    for (let i = 0; i < 6; i++)
     {
         for (let j = 0; j < 4; j++)
             ctCounts[i][4] += ctCounts[i][j];
@@ -75,7 +76,7 @@ function update(li, chart, orig)
     for (let i = 0; i < 5; i++)
     {
         const countsT = counts[i + 1].children;
-        for (let j = 1; j < 5; j++)
+        for (let j = 1; j < 6; j++)
             countsT[j].textContent = ctCounts[j][i];
         countsT[0].textContent = Math.round(ctCounts[0][i]);
     }
@@ -211,7 +212,7 @@ function toggleDiff(a)
             const li = document.getElementById("c" + orig.index);
             if (prefs[j] && prefs[chart.ct + 5])
             {
-                for (let k = 0; k < 9; k++)
+                for (let k = 0; k < 10; k++)
                 {
                     if (packs[k] <= orig.index && orig.index < packs[k + 1])
                     {
@@ -230,7 +231,7 @@ function toggleDiff(a)
     }
     const charts = document.getElementById("stats").children[0].children;
     for (let i = 0; i < 4; i++)
-        charts[i + 1].style.backgroundImage = ctColours[prefs[4]][3 - i];
+        charts[i + 2].style.backgroundImage = ctColours[prefs[4]][3 - i];
     for (let i = 0; i < 4; i++)
     {
         if (prefs[i + 5])
@@ -280,7 +281,7 @@ function init()
     for (let i = 0; i < 4; i++)
     {
         charts[i + 1].style.color = colours[i];
-        chartsT[i + 1].style.backgroundImage = ctColours[prefs[4]][3 - i];
+        chartsT[i + 2].style.backgroundImage = ctColours[prefs[4]][3 - i];
     }
     for (let i in original)
     {
