@@ -1,6 +1,6 @@
-const ver = "vivid/stasis v5.0.0";
-const upd = "Last updated 08.07.2025";
-const packs = [0, 41, 85, 145, 180, 218, 266, 313, 458, 549, 575];
+const ver = "vivid/stasis v5.0.1";
+const upd = "Last updated 03.08.2025";
+const packs = [0, 41, 85, 145, 180, 219, 267, 314, 459, 550, 576];
 const original = 
 {
     "grode":
@@ -1081,22 +1081,27 @@ const original =
             index: 182,
             lv: 12.1,
             notes: 1326
+        },
+        {
+            index: 183,
+            lv: 13.3,
+            notes: 1514
         }
     ],
     "lost contact":
     [
         {
-            index: 183,
+            index: 184,
             lv: 5.0,
             notes: 717
         },
         {
-            index: 184,
+            index: 185,
             lv: 10.0,
             notes: 1064
         },
         {
-            index: 185,
+            index: 186,
             lv: 12.7,
             notes: 1264
         }
@@ -1104,22 +1109,22 @@ const original =
     "Nhelv":
     [
         {
-            index: 186,
+            index: 187,
             lv: 5.0,
             notes: 792
         },
         {
-            index: 187,
+            index: 188,
             lv: 11.2,
             notes: 1146
         },
         {
-            index: 188,
+            index: 189,
             lv: 14.6,
             notes: 1412
         },
         {
-            index: 189,
+            index: 190,
             lv: 16.8,
             notes: 1969
         }
@@ -1127,22 +1132,22 @@ const original =
     "nullbreak":
     [
         {
-            index: 190,
+            index: 191,
             lv: 4.0,
             notes: 685
         },
         {
-            index: 191,
+            index: 192,
             lv: 9.0,
             notes: 930
         },
         {
-            index: 192,
+            index: 193,
             lv: 14.6,
             notes: 1454
         },
         {
-            index: 193,
+            index: 194,
             lv: 16.2,
             notes: 1580
         }
@@ -1150,17 +1155,17 @@ const original =
     "Sternstunde":
     [
         {
-            index: 194,
+            index: 195,
             lv: 5.0,
             notes: 729
         },
         {
-            index: 195,
+            index: 196,
             lv: 9.6,
             notes: 923
         },
         {
-            index: 196,
+            index: 197,
             lv: 14.7,
             notes: 1335
         }
@@ -1168,17 +1173,17 @@ const original =
     "The Night of Fright":
     [
         {
-            index: 197,
+            index: 198,
             lv: 6.0,
             notes: 727
         },
         {
-            index: 198,
+            index: 199,
             lv: 10.6,
             notes: 966
         },
         {
-            index: 199,
+            index: 200,
             lv: 15.1,
             notes: 1558
         }
@@ -1186,17 +1191,17 @@ const original =
     "exterminate()":
     [
         {
-            index: 200,
+            index: 201,
             lv: 7.0,
             notes: 794
         },
         {
-            index: 201,
+            index: 202,
             lv: 10.0,
             notes: 1040
         },
         {
-            index: 202,
+            index: 203,
             lv: 16.2,
             notes: 1940
         }
@@ -1204,22 +1209,22 @@ const original =
     "CLAUDIA -libertia-":
     [
         {
-            index: 203,
+            index: 204,
             lv: 9.0,
             notes: 1173
         },
         {
-            index: 204,
+            index: 205,
             lv: 12.4,
             notes: 1602
         },
         {
-            index: 205,
+            index: 206,
             lv: 16.2,
             notes: 2269
         },
         {
-            index: 206,
+            index: 207,
             lv: 17.3,
             notes: 2446
         }
@@ -1227,22 +1232,22 @@ const original =
     "stop-motion":
     [
         {
-            index: 207,
+            index: 208,
             lv: 8.0,
             notes: 938
         },
         {
-            index: 208,
+            index: 209,
             lv: 12.0,
             notes: 1383
         },
         {
-            index: 209,
+            index: 210,
             lv: 15.7,
             notes: 1817
         },
         {
-            index: 210,
+            index: 211,
             lv: 16.4,
             notes: 2006
         }
@@ -1250,17 +1255,17 @@ const original =
     "Crimson Dance (vivid/stasis Edit)":
     [
         {
-            index: 211,
+            index: 212,
             lv: 8.0,
             notes: 1111
         },
         {
-            index: 212,
+            index: 213,
             lv: 11.9,
             notes: 1452
         },
         {
-            index: 213,
+            index: 214,
             lv: 14.9,
             notes: 2175
         }
@@ -1268,22 +1273,22 @@ const original =
     "SENT://INEL":
     [
         {
-            index: 214,
+            index: 215,
             lv: 9.0,
             notes: 1254
         },
         {
-            index: 215,
+            index: 216,
             lv: 12.8,
             notes: 1792
         },
         {
-            index: 216,
+            index: 217,
             lv: 15.7,
             notes: 2277
         },
         {
-            index: 217,
+            index: 218,
             lv: 17.3,
             notes: 2763
         }
@@ -1291,17 +1296,17 @@ const original =
     "the more i carry on...":
     [
         {
-            index: 218,
+            index: 219,
             lv: 3.0,
             notes: 760
         },
         {
-            index: 219,
+            index: 220,
             lv: 9.0,
             notes: 1036
         },
         {
-            index: 220,
+            index: 221,
             lv: 13.7,
             notes: 1497
         }
@@ -1309,17 +1314,17 @@ const original =
     "even at the end of the world, you left it":
     [
         {
-            index: 221,
+            index: 222,
             lv: 4.0,
             notes: 833
         },
         {
-            index: 222,
+            index: 223,
             lv: 9.6,
             notes: 1100
         },
         {
-            index: 223,
+            index: 224,
             lv: 12.2,
             notes: 1551
         }
@@ -1327,17 +1332,17 @@ const original =
     "final farewell -aquaregia-":
     [
         {
-            index: 224,
+            index: 225,
             lv: 4.0,
             notes: 590
         },
         {
-            index: 225,
+            index: 226,
             lv: 9.0,
             notes: 809
         },
         {
-            index: 226,
+            index: 227,
             lv: 12.7,
             notes: 1245
         }
@@ -1345,22 +1350,22 @@ const original =
     "(execute.)":
     [
         {
-            index: 227,
+            index: 228,
             lv: 6.0,
             notes: 723
         },
         {
-            index: 228,
+            index: 229,
             lv: 10.0,
             notes: 955
         },
         {
-            index: 229,
+            index: 230,
             lv: 13.4,
             notes: 1556
         },
         {
-            index: 230,
+            index: 231,
             lv: 16.2,
             notes: 1861
         }
@@ -1368,22 +1373,22 @@ const original =
     "Prismatic Vortex":
     [
         {
-            index: 231,
+            index: 232,
             lv: 4.0,
             notes: 556
         },
         {
-            index: 232,
+            index: 233,
             lv: 9.6,
             notes: 960
         },
         {
-            index: 233,
+            index: 234,
             lv: 11.6,
             notes: 1320
         },
         {
-            index: 234,
+            index: 235,
             lv: 13.5,
             notes: 1609
         }
@@ -1391,17 +1396,17 @@ const original =
     "stardust":
     [
         {
-            index: 235,
+            index: 236,
             lv: 8.0,
             notes: 971
         },
         {
-            index: 236,
+            index: 237,
             lv: 10.6,
             notes: 1159
         },
         {
-            index: 237,
+            index: 238,
             lv: 14.5,
             notes: 1555
         }
@@ -1409,17 +1414,17 @@ const original =
     "heptagramme":
     [
         {
-            index: 238,
+            index: 239,
             lv: 7.0,
             notes: 937
         },
         {
-            index: 239,
+            index: 240,
             lv: 12.3,
             notes: 1369
         },
         {
-            index: 240,
+            index: 241,
             lv: 14.6,
             notes: 1913
         }
@@ -1427,17 +1432,17 @@ const original =
     "crack in the earth":
     [
         {
-            index: 241,
+            index: 242,
             lv: 7.0,
             notes: 630
         },
         {
-            index: 242,
+            index: 243,
             lv: 11.4,
             notes: 871
         },
         {
-            index: 243,
+            index: 244,
             lv: 14.8,
             notes: 1246
         }
@@ -1445,22 +1450,22 @@ const original =
     "Nightshade":
     [
         {
-            index: 244,
+            index: 245,
             lv: 7.0,
             notes: 914
         },
         {
-            index: 245,
+            index: 246,
             lv: 11.4,
             notes: 1078
         },
         {
-            index: 246,
+            index: 247,
             lv: 12.8,
             notes: 1343
         },
         {
-            index: 247,
+            index: 248,
             lv: 16.0,
             notes: 2181
         }
@@ -1468,22 +1473,22 @@ const original =
     "aria of ruinated winds":
     [
         {
-            index: 248,
+            index: 249,
             lv: 4.0,
             notes: 979
         },
         {
-            index: 249,
+            index: 250,
             lv: 11.6,
             notes:1329
         },
         {
-            index: 250,
+            index: 251,
             lv: 13.8,
             notes: 1637
         },
         {
-            index: 251,
+            index: 252,
             lv: 16.9,
             notes: 2130
         }
@@ -1491,17 +1496,17 @@ const original =
     "Reboot":
     [
         {
-            index: 252,
+            index: 253,
             lv: 8.0,
             notes: 1167
         },
         {
-            index: 253,
+            index: 254,
             lv: 12.7,
             notes: 1786
         },
         {
-            index: 254,
+            index: 255,
             lv: 16.0,
             notes: 2357
         }
@@ -1509,17 +1514,17 @@ const original =
     "ULTiM∀TUM":
     [
         {
-            index: 255,
+            index: 256,
             lv: 8.0,
             notes: 960
         },
         {
-            index: 256,
+            index: 257,
             lv: 11.8,
             notes: 1578
         },
         {
-            index: 257,
+            index: 258,
             lv: 16.3,
             notes: 2309
         }
@@ -1527,22 +1532,22 @@ const original =
     "Concrete Jungle":
     [
         {
-            index: 258,
+            index: 259,
             lv: 7.0,
             notes: 883
         },
         {
-            index: 259,
+            index: 260,
             lv: 11.2,
             notes: 1457
         },
         {
-            index: 260,
+            index: 261,
             lv: 14.2,
             notes: 1668
         },
         {
-            index: 261,
+            index: 262,
             lv: 15.7,
             notes: 1942
         }
@@ -1550,22 +1555,22 @@ const original =
     "CONVERGENCE":
     [
         {
-            index: 262,
+            index: 263,
             lv: 9.0,
             notes: 1213
         },
         {
-            index: 263,
+            index: 264,
             lv: 12.9,
             notes: 1815
         },
         {
-            index: 264,
+            index: 265,
             lv: 15.6,
             notes: 2599
         },
         {
-            index: 265,
+            index: 266,
             lv: 17.4,
             notes: 3004
         }
@@ -1573,22 +1578,22 @@ const original =
     "thrinos;pygmalion":
     [
         {
-            index: 266,
+            index: 267,
             lv: 8.0,
             notes: 636
         },
         {
-            index: 267,
+            index: 268,
             lv: 12.5,
             notes: 1063
         },
         {
-            index: 268,
+            index: 269,
             lv: 14.9,
             notes: 1280
         },
         {
-            index: 269,
+            index: 270,
             lv: 16.7,
             notes: 1652
         }
@@ -1596,22 +1601,22 @@ const original =
     "Bloom in Two":
     [
         {
-            index: 270,
+            index: 271,
             lv: 9.0,
             notes: 1056
         },
         {
-            index: 271,
+            index: 272,
             lv: 12.1,
             notes: 1385
         },
         {
-            index: 272,
+            index: 273,
             lv: 15.2,
             notes: 1981
         },
         {
-            index: 273,
+            index: 274,
             lv: 17.1,
             notes: 2407
         }
@@ -1619,22 +1624,22 @@ const original =
     "χΩ":
     [
         {
-            index: 274,
+            index: 275,
             lv: 9.0,
             notes: 898
         },
         {
-            index: 275,
+            index: 276,
             lv: 12.6,
             notes: 1837
         },
         {
-            index: 276,
+            index: 277,
             lv: 15.6,
             notes: 2241
         },
         {
-            index: 277,
+            index: 278,
             lv: 17.0,
             notes: 2594
         }
@@ -1642,22 +1647,22 @@ const original =
     "First Breath":
     [
         {
-            index: 278,
+            index: 279,
             lv: 9.6,
             notes: 1729
         },
         {
-            index: 279,
+            index: 280,
             lv: 12.7,
             notes: 2230
         },
         {
-            index: 280,
+            index: 281,
             lv: 16.1,
             notes: 3116
         },
         {
-            index: 281,
+            index: 282,
             lv: 17.6,
             notes: 3533
         }
@@ -1665,17 +1670,17 @@ const original =
     "SELF":
     [
         {
-            index: 282,
+            index: 283,
             lv: 4.0,
             notes: 721
         },
         {
-            index: 283,
+            index: 284,
             lv: 9.6,
             notes: 1037
         },
         {
-            index: 284,
+            index: 285,
             lv: 11.7,
             notes: 1495
         }
@@ -1683,22 +1688,22 @@ const original =
     "acta est fabula, plaudite":
     [
         {
-            index: 285,
+            index: 286,
             lv: 10.0,
             notes: 3188
         },
         {
-            index: 286,
+            index: 287,
             lv: 13.6,
             notes: 4632
         },
         {
-            index: 287,
+            index: 288,
             lv: 16.9,
             notes: 5617
         },
         {
-            index: 288,
+            index: 289,
             lv: 17.9,
             notes: 6671
         }
@@ -1706,17 +1711,17 @@ const original =
     "Is This It Is It":
     [
         {
-            index: 289,
+            index: 290,
             lv: 5.0,
             notes: 666
         },
         {
-            index: 290,
+            index: 291,
             lv: 10.0,
             notes: 1000
         },
         {
-            index: 291,
+            index: 292,
             lv: 12.8,
             notes: 1567
         }
@@ -1724,22 +1729,22 @@ const original =
     "Solomon's Seal":
     [
         {
-            index: 292,
+            index: 293,
             lv: 1.0,
             notes: 256
         },
         {
-            index: 293,
+            index: 294,
             lv: 6.0,
             notes: 412
         },
         {
-            index: 294,
+            index: 295,
             lv: 9.0,
             notes: 500
         },
         {
-            index: 295,
+            index: 296,
             lv: 11.0,
             notes: 785
         }
@@ -1747,17 +1752,17 @@ const original =
     "Attractor Force":
     [
         {
-            index: 296,
+            index: 297,
             lv: 2.0,
             notes: 511
         },
         {
-            index: 297,
+            index: 298,
             lv: 6.0,
             notes: 676
         },
         {
-            index: 298,
+            index: 299,
             lv: 10.6,
             notes: 974
         }
@@ -1765,17 +1770,17 @@ const original =
     "See You Move":
     [
         {
-            index: 299,
+            index: 300,
             lv: 6.0,
             notes: 584
         },
         {
-            index: 300,
+            index: 301,
             lv: 10.6,
             notes: 920
         },
         {
-            index: 301,
+            index: 302,
             lv: 12.7,
             notes: 1106
         }
@@ -1783,22 +1788,22 @@ const original =
     "Voltage Strike":
     [
         {
-            index: 302,
+            index: 303,
             lv: 6.0,
             notes: 743
         },
         {
-            index: 303,
+            index: 304,
             lv: 9.0,
             notes: 950
         },
         {
-            index: 304,
+            index: 305,
             lv: 12.5,
             notes: 1447
         },
         {
-            index: 305,
+            index: 306,
             lv: 13.6,
             notes: 1822
         }
@@ -1806,17 +1811,17 @@ const original =
     "reFract::dense":
     [
         {
-            index: 306,
+            index: 307,
             lv: 5.0,
             notes: 546
         },
         {
-            index: 307,
+            index: 308,
             lv: 10.0,
             notes: 832
         },
         {
-            index: 308,
+            index: 309,
             lv: 15.3,
             notes: 1288
         }
@@ -1824,22 +1829,22 @@ const original =
     "B3611V":
     [
         {
-            index: 309,
+            index: 310,
             lv: 9.6,
             notes: 1851
         },
         {
-            index: 310,
+            index: 311,
             lv: 13.5,
             notes: 2599
         },
         {
-            index: 311,
+            index: 312,
             lv: 15.6,
             notes: 2619
         },
         {
-            index: 312,
+            index: 313,
             lv: 17.4,
             notes: 3099
         }
@@ -1847,17 +1852,17 @@ const original =
     "Perfect ConfeCute!!":
     [
         {
-            index: 313,
+            index: 314,
             lv: 6.0,
             notes: 497
         },
         {
-            index: 314,
+            index: 315,
             lv: 10.6,
             notes: 641
         },
         {
-            index: 315,
+            index: 316,
             lv: 11.0,
             notes: 869
         }
@@ -1865,17 +1870,17 @@ const original =
     "INFiNiTE ENERZY -Overdoze-":
     [
         {
-            index: 316,
+            index: 317,
             lv: 2.0,
             notes: 331
         },
         {
-            index: 317,
+            index: 318,
             lv: 6.0,
             notes: 503
         },
         {
-            index: 318,
+            index: 319,
             lv: 13.0,
             notes: 1079
         }
@@ -1883,17 +1888,17 @@ const original =
     "Synthesizer Party":
     [
         {
-            index: 319,
+            index: 320,
             lv: 3.0,
             notes: 531
         },
         {
-            index: 320,
+            index: 321,
             lv: 9.0,
             notes: 769
         },
         {
-            index: 321,
+            index: 322,
             lv: 11.8,
             notes: 1047
         }
@@ -1901,22 +1906,22 @@ const original =
     "There":
     [
         {
-            index: 322,
+            index: 323,
             lv: 3.0,
             notes: 334
         },
         {
-            index: 323,
+            index: 324,
             lv: 8.0,
             notes: 659
         },
         {
-            index: 324,
+            index: 325,
             lv: 10.6,
             notes: 758
         },
         {
-            index: 325,
+            index: 326,
             lv: 12.9,
             notes: 1492
         }
@@ -1924,17 +1929,17 @@ const original =
     "What You Love":
     [
         {
-            index: 326,
+            index: 327,
             lv: 5.0,
             notes: 541
         },
         {
-            index: 327,
+            index: 328,
             lv: 9.0,
             notes: 694
         },
         {
-            index: 328,
+            index: 329,
             lv: 12.1,
             notes: 1183
         }
@@ -1942,22 +1947,22 @@ const original =
     "GOODRAGE":
     [
         {
-            index: 329,
+            index: 330,
             lv: 4.0,
             notes: 466
         },
         {
-            index: 330,
+            index: 331,
             lv: 9.6,
             notes: 801
         },
         {
-            index: 331,
+            index: 332,
             lv: 13.5,
             notes: 1215
         },
         {
-            index: 332,
+            index: 333,
             lv: 15.0,
             notes: 1411
         }
@@ -1965,22 +1970,22 @@ const original =
     "BADSECRET":
     [
         {
-            index: 333,
+            index: 334,
             lv: 8.0,
             notes: 923
         },
         {
-            index: 334,
+            index: 335,
             lv: 11.1,
             notes: 1177
         },
         {
-            index: 335,
+            index: 336,
             lv: 13.3,
             notes: 1603
         },
         {
-            index: 336,
+            index: 337,
             lv: 13.4,
             notes: 1380
         }
@@ -1988,17 +1993,17 @@ const original =
     "Wavetapper":
     [
         {
-            index: 337,
+            index: 338,
             lv: 3.0,
             notes: 417
         },
         {
-            index: 338,
+            index: 339,
             lv: 9.0,
             notes: 1053
         },
         {
-            index: 339,
+            index: 340,
             lv: 11.5,
             notes: 1357
         }
@@ -2006,17 +2011,17 @@ const original =
     "Options":
     [
         {
-            index: 340,
+            index: 341,
             lv: 3.0,
             notes: 747
         },
         {
-            index: 341,
+            index: 342,
             lv: 7.0,
             notes: 721
         },
         {
-            index: 342,
+            index: 343,
             lv: 10.0,
             notes: 1032
         }
@@ -2024,22 +2029,22 @@ const original =
     "Credits":
     [
         {
-            index: 343,
+            index: 344,
             lv: 2.0,
             notes: 657
         },
         {
-            index: 344,
+            index: 345,
             lv: 9.6,
             notes: 954
         },
         {
-            index: 345,
+            index: 346,
             lv: 13.5,
             notes: 1442
         },
         {
-            index: 346,
+            index: 347,
             lv: 13.7,
             notes: 1452
         }
@@ -2047,17 +2052,17 @@ const original =
     "Pictured as Perfect":
     [
         {
-            index: 347,
+            index: 348,
             lv: 4.0,
             notes: 678
         },
         {
-            index: 348,
+            index: 349,
             lv: 10.0,
             notes: 1008
         },
         {
-            index: 349,
+            index: 350,
             lv: 13.6,
             notes: 1604
         }
@@ -2065,22 +2070,22 @@ const original =
     "grode(decoherence)":
     [
         {
-            index: 350,
+            index: 351,
             lv: 5.0,
             notes: 629
         },
         {
-            index: 351,
+            index: 352,
             lv: 10.6,
             notes: 898
         },
         {
-            index: 352,
+            index: 353,
             lv: 15.5,
             notes: 1386
         },
         {
-            index: 353,
+            index: 354,
             lv: 15.9,
             notes: 2035
         }
@@ -2088,17 +2093,17 @@ const original =
     "grode (Wyvren's Remix)":
     [
         {
-            index: 354,
+            index: 355,
             lv: 5.0,
             notes: 696
         },
         {
-            index: 355,
+            index: 356,
             lv: 8.0,
             notes: 910
         },
         {
-            index: 356,
+            index: 357,
             lv: 14.2,
             notes: 1467
         }
@@ -2106,22 +2111,22 @@ const original =
     "Acolyte":
     [
         {
-            index: 357,
+            index: 358,
             lv: 1.0,
             notes: 511
         },
         {
-            index: 358,
+            index: 359,
             lv: 7.0,
             notes: 1107
         },
         {
-            index: 359,
+            index: 360,
             lv: 11.6,
             notes: 1353
         },
         {
-            index: 360,
+            index: 361,
             lv: 13.9,
             notes: 1843
         }
@@ -2129,17 +2134,17 @@ const original =
     "The 89's Momentum":
     [
         {
-            index: 361,
+            index: 362,
             lv: 6.0,
             notes: 467
         },
         {
-            index: 362,
+            index: 363,
             lv: 7.0,
             notes: 735
         },
         {
-            index: 363,
+            index: 364,
             lv: 10.6,
             notes: 934
         }
@@ -2147,17 +2152,17 @@ const original =
     "FULi AUTO SHOOTER":
     [
         {
-            index: 364,
+            index: 365,
             lv: 1.0,
             notes: 292
         },
         {
-            index: 365,
+            index: 366,
             lv: 8.0,
             notes: 841
         },
         {
-            index: 366,
+            index: 367,
             lv: 11.1,
             notes: 997
         }
@@ -2165,17 +2170,17 @@ const original =
     "FULi AUTO BUSTER":
     [
         {
-            index: 367,
+            index: 368,
             lv: 6.0,
             notes: 520
         },
         {
-            index: 368,
+            index: 369,
             lv: 9.0,
             notes: 752
         },
         {
-            index: 369,
+            index: 370,
             lv: 11.3,
             notes: 1084
         }
@@ -2183,17 +2188,17 @@ const original =
     "Beyond the Heart (Broken Heart Mix)":
     [
         {
-            index: 370,
+            index: 371,
             lv: 4.0,
             notes: 511
         },
         {
-            index: 371,
+            index: 372,
             lv: 8.0,
             notes: 723
         },
         {
-            index: 372,
+            index: 373,
             lv: 12.5,
             notes: 1183
         }
@@ -2201,17 +2206,17 @@ const original =
     "Spin Cycle (NETCAVY ReMiX)":
     [
         {
-            index: 373,
+            index: 374,
             lv: 6.0,
             notes: 854
         },
         {
-            index: 374,
+            index: 375,
             lv: 11.3,
             notes: 1223
         },
         {
-            index: 375,
+            index: 376,
             lv: 12.9,
             notes: 1569
         }
@@ -2219,17 +2224,17 @@ const original =
     "Spell Diver":
     [
         {
-            index: 376,
+            index: 377,
             lv: 5.0,
             notes: 480
         },
         {
-            index: 377,
+            index: 378,
             lv: 8.0,
             notes: 667
         },
         {
-            index: 378,
+            index: 379,
             lv: 12.4,
             notes: 999
         }
@@ -2237,22 +2242,22 @@ const original =
     "Luminaria":
     [
         {
-            index: 379,
+            index: 380,
             lv: 1.0,
             notes: 423
         },
         {
-            index: 380,
+            index: 381,
             lv: 6.0,
             notes: 699
         },
         {
-            index: 381,
+            index: 382,
             lv: 12.0,
             notes: 1301
         },
         {
-            index: 382,
+            index: 383,
             lv: 13.4,
             notes: 1489
         }
@@ -2260,22 +2265,22 @@ const original =
     "Stellaria":
     [
         {
-            index: 383,
+            index: 384,
             lv: 3.0,
             notes: 619
         },
         {
-            index: 384,
+            index: 385,
             lv: 7.0,
             notes: 797
         },
         {
-            index: 385,
+            index: 386,
             lv: 12.0,
             notes: 1200
         },
         {
-            index: 386,
+            index: 387,
             lv: 14.2,
             notes: 1603
         }
@@ -2283,17 +2288,17 @@ const original =
     "G e n g a o z o":
     [
         {
-            index: 387,
+            index: 388,
             lv: 7.0,
             notes: 787
         },
         {
-            index: 388,
+            index: 389,
             lv: 10.0,
             notes: 1011
         },
         {
-            index: 389,
+            index: 390,
             lv: 13.1,
             notes: 1429
         }
@@ -2301,17 +2306,17 @@ const original =
     "The Next Arcady":
     [
         {
-            index: 390,
+            index: 391,
             lv: 6.0,
             notes: 527
         },
         {
-            index: 391,
+            index: 392,
             lv: 10.6,
             notes: 913
         },
         {
-            index: 392,
+            index: 393,
             lv: 12.4,
             notes: 1187
         }
@@ -2319,17 +2324,17 @@ const original =
     "Random":
     [
         {
-            index: 393,
+            index: 394,
             lv: 5.0,
             notes: 518
         },
         {
-            index: 394,
+            index: 395,
             lv: 9.6,
             notes: 720
         },
         {
-            index: 395,
+            index: 396,
             lv: 12.4,
             notes: 1305
         }
@@ -2337,22 +2342,22 @@ const original =
     "slic.hertz":
     [
         {
-            index: 396,
+            index: 397,
             lv: 7.0,
             notes: 626
         },
         {
-            index: 397,
+            index: 398,
             lv: 10.6,
             notes: 941
         },
         {
-            index: 398,
+            index: 399,
             lv: 13.9,
             notes: 1436
         },
         {
-            index: 399,
+            index: 400,
             lv: 13.9,
             notes: 1248
         }
@@ -2360,22 +2365,22 @@ const original =
     "F1055":
     [
         {
-            index: 400,
+            index: 401,
             lv: 3.0,
             notes: 769
         },
         {
-            index: 401,
+            index: 402,
             lv: 9.6,
             notes: 963
         },
         {
-            index: 402,
+            index: 403,
             lv: 14.0,
             notes: 1688
         },
         {
-            index: 403,
+            index: 404,
             lv: 14.7,
             notes: 1516
         }
@@ -2383,17 +2388,17 @@ const original =
     "Asymmetry (takehirotei remix)":
     [
         {
-            index: 404,
+            index: 405,
             lv: 3.0,
             notes: 344
         },
         {
-            index: 405,
+            index: 406,
             lv: 9.0,
             notes: 689
         },
         {
-            index: 406,
+            index: 407,
             lv: 12.9,
             notes: 1093
         }
@@ -2401,22 +2406,22 @@ const original =
     "WATAGASHI RUSH":
     [
         {
-            index: 407,
+            index: 408,
             lv: 4.0,
             notes: 428
         },
         {
-            index: 408,
+            index: 409,
             lv: 8.0,
             notes: 698
         },
         {
-            index: 409,
+            index: 410,
             lv: 11.9,
             notes: 1117
         },
         {
-            index: 410,
+            index: 411,
             lv: 14.9,
             notes: 1359
         }
@@ -2424,22 +2429,22 @@ const original =
     "Yamai":
     [
         {
-            index: 411,
+            index: 412,
             lv: 8.0,
             notes: 762
         },
         {
-            index: 412,
+            index: 413,
             lv: 11.0,
             notes: 1017
         },
         {
-            index: 413,
+            index: 414,
             lv: 12.3,
             notes: 1299
         },
         {
-            index: 414,
+            index: 415,
             lv: 15.4,
             notes: 1532
         }
@@ -2447,17 +2452,17 @@ const original =
     "safe_state (MANIAQ Sound Team Remix)":
     [
         {
-            index: 415,
+            index: 416,
             lv: 4.0,
             notes: 683
         },
         {
-            index: 416,
+            index: 417,
             lv: 9.0,
             notes: 933
         },
         {
-            index: 417,
+            index: 418,
             lv: 13.2,
             notes: 1414
         }
@@ -2465,17 +2470,17 @@ const original =
     "Un-TECHNiCAL Reason":
     [
         {
-            index: 418,
+            index: 419,
             lv: 6.0,
             notes: 907
         },
         {
-            index: 419,
+            index: 420,
             lv: 9.0,
             notes: 1126
         },
         {
-            index: 420,
+            index: 421,
             lv: 14.4,
             notes: 1705
         }
@@ -2483,22 +2488,22 @@ const original =
     "Gauntlet":
     [
         {
-            index: 421,
+            index: 422,
             lv: 5.0,
             notes: 900
         },
         {
-            index: 422,
+            index: 423,
             lv: 9.0,
             notes: 1094
         },
         {
-            index: 423,
+            index: 424,
             lv: 12.4,
             notes: 1498
         },
         {
-            index: 424,
+            index: 425,
             lv: 13.9,
             notes: 1879
         }
@@ -2506,17 +2511,17 @@ const original =
     "HTTPS":
     [
         {
-            index: 425,
+            index: 426,
             lv: 3.0,
             notes: 422
         },
         {
-            index: 426,
+            index: 427,
             lv: 11.1,
             notes: 1192
         },
         {
-            index: 427,
+            index: 428,
             lv: 13.6,
             notes: 1474
         }
@@ -2524,17 +2529,17 @@ const original =
     "3, 2, 1, Let's Go":
     [
         {
-            index: 428,
+            index: 429,
             lv: 5.0,
             notes: 609
         },
         {
-            index: 429,
+            index: 430,
             lv: 10.6,
             notes: 941
         },
         {
-            index: 430,
+            index: 431,
             lv: 15.3,
             notes: 1609
         }
@@ -2542,17 +2547,17 @@ const original =
     "-1":
     [
         {
-            index: 431,
+            index: 432,
             lv: 5.0,
             notes: 602
         },
         {
-            index: 432,
+            index: 433,
             lv: 10.6,
             notes: 1070
         },
         {
-            index: 433,
+            index: 434,
             lv: 14.3,
             notes: 1601
         }
@@ -2560,17 +2565,17 @@ const original =
     "taffy":
     [
         {
-            index: 434,
+            index: 435,
             lv: 7.0,
             notes: 785
         },
         {
-            index: 435,
+            index: 436,
             lv: 11.0,
             notes: 1095
         },
         {
-            index: 436,
+            index: 437,
             lv: 15.3,
             notes: 1577
         }
@@ -2578,17 +2583,17 @@ const original =
     "Showdown":
     [
         {
-            index: 437,
+            index: 438,
             lv: 5.0,
             notes: 641
         },
         {
-            index: 438,
+            index: 439,
             lv: 11.2,
             notes: 1056
         },
         {
-            index: 439,
+            index: 440,
             lv: 15.0,
             notes: 1299
         }
@@ -2596,22 +2601,22 @@ const original =
     "+ERABY+E CONNEC+10N":
     [
         {
-            index: 440,
+            index: 441,
             lv: 9.0,
             notes: 1047
         },
         {
-            index: 441,
+            index: 442,
             lv: 11.4,
             notes: 1122
         },
         {
-            index: 442,
+            index: 443,
             lv: 15.2,
             notes: 1966
         },
         {
-            index: 443,
+            index: 444,
             lv: 16.0,
             notes: 2000
         }
@@ -2619,22 +2624,22 @@ const original =
     "MYSTERIOUS TRIGGER":
     [
         {
-            index: 444,
+            index: 445,
             lv: 6.0,
             notes: 958
         },
         {
-            index: 445,
+            index: 446,
             lv: 11.6,
             notes: 1388
         },
         {
-            index: 446,
+            index: 447,
             lv: 14.6,
             notes: 1928
         },
         {
-            index: 447,
+            index: 448,
             lv: 15.8,
             notes: 2020
         }
@@ -2642,22 +2647,22 @@ const original =
     "Happy Go Lucky!!!":
     [
         {
-            index: 448,
+            index: 449,
             lv: 5.0,
             notes: 741
         },
         {
-            index: 449,
+            index: 450,
             lv: 9.6,
             notes: 967
         },
         {
-            index: 450,
+            index: 451,
             lv: 15.7,
             notes: 1761
         },
         {
-            index: 451,
+            index: 452,
             lv: 16.4,
             notes: 1965
         }
@@ -2665,17 +2670,17 @@ const original =
     "LET THE CREATION BEGIN":
     [
         {
-            index: 452,
+            index: 453,
             lv: 3.0,
             notes: 873
         },
         {
-            index: 453,
+            index: 454,
             lv: 11.3,
             notes: 1048
         },
         {
-            index: 454,
+            index: 455,
             lv: 16.5,
             notes: 1938
         }
@@ -2683,17 +2688,17 @@ const original =
     "Foolish Ambition":
     [
         {
-            index: 455,
+            index: 456,
             lv: 9.0,
             notes: 1022
         },
         {
-            index: 456,
+            index: 457,
             lv: 11.6,
             notes: 1580
         },
         {
-            index: 457,
+            index: 458,
             lv: 16.6,
             notes: 2372
         }
@@ -2701,63 +2706,63 @@ const original =
     "NULCTRL":
     [
         {
-            index: 458,
+            index: 459,
             lv: 3.0,
             notes: 580
         },
         {
-            index: 459,
+            index: 460,
             lv: 9.0,
             notes: 789
         },
         {
-            index: 460,
+            index: 461,
             lv: 10.6,
             notes: 1024
         },
         {
-            index: 461,
+            index: 462,
             lv: 11.7,
             notes: 1212
         }
     ],
-    "Proper Rhythm":
+    "PROPER RHYTHM":
     [
         {
-            index: 462,
+            index: 463,
             lv: 1.0,
             notes: 315
         },
         {
-            index: 463,
+            index: 464,
             lv: 6.0,
             notes: 611
         },
         {
-            index: 464,
+            index: 465,
             lv: 11.2,
             notes: 1031
         },
         {
-            index: 465,
+            index: 466,
             lv: 12.0,
             notes: 1060
         }
     ],
-    "Worn Out Tapes":
+    "WORN OUT TAPES [tally-ho! version]":
     [
         {
-            index: 466,
+            index: 467,
             lv: 5.0,
             notes: 789
         },
         {
-            index: 467,
+            index: 468,
             lv: 11.4,
             notes: 1034
         },
         {
-            index: 468,
+            index: 469,
             lv: 14.3,
             notes: 1482
         }
@@ -2765,22 +2770,22 @@ const original =
     "All The Times":
     [
         {
-            index: 469,
+            index: 470,
             lv: 2.0,
             notes: 275
         },
         {
-            index: 470,
+            index: 471,
             lv: 6.0,
             notes: 361
         },
         {
-            index: 471,
+            index: 472,
             lv: 10.6,
             notes: 731
         },
         {
-            index: 472,
+            index: 473,
             lv: 12.0,
             notes: 915
         }
@@ -2788,17 +2793,17 @@ const original =
     "It Go (Cheryl Stelli remix)":
     [
         {
-            index: 473,
+            index: 474,
             lv: 7.0,
             notes: 851
         },
         {
-            index: 474,
+            index: 475,
             lv: 10.6,
             notes: 1197
         },
         {
-            index: 475,
+            index: 476,
             lv: 12.6,
             notes: 1581
         }
@@ -2806,22 +2811,22 @@ const original =
     "LORELEI":
     [
         {
-            index: 476,
+            index: 477,
             lv: 8.0,
             notes: 1103
         },
         {
-            index: 477,
+            index: 478,
             lv: 11.7,
             notes: 1617
         },
         {
-            index: 478,
+            index: 479,
             lv: 15.6,
             notes: 2639
         },
         {
-            index: 479,
+            index: 480,
             lv: 17.2,
             notes: 2911
         }
@@ -2829,17 +2834,17 @@ const original =
     "Faux Real (VIVID REDUX)":
     [
         {
-            index: 480,
+            index: 481,
             lv: 3.0,
             notes: 609
         },
         {
-            index: 481,
+            index: 482,
             lv: 8.0,
             notes: 857
         },
         {
-            index: 482,
+            index: 483,
             lv: 12.1,
             notes: 1245
         }
@@ -2847,17 +2852,17 @@ const original =
     "CITY RIDE IN THE JUNGLE":
     [
         {
-            index: 483,
+            index: 484,
             lv: 7.0,
             notes: 707
         },
         {
-            index: 484,
+            index: 485,
             lv: 10.6,
             notes: 943
         },
         {
-            index: 485,
+            index: 486,
             lv: 12.9,
             notes: 1223
         }
@@ -2865,17 +2870,17 @@ const original =
     "Battle in Enemy Territory":
     [
         {
-            index: 486,
+            index: 487,
             lv: 5.0,
             notes: 865
         },
         {
-            index: 487,
+            index: 488,
             lv: 10.6,
             notes: 1293
         },
         {
-            index: 488,
+            index: 489,
             lv: 13.3,
             notes: 1830
         }
@@ -2883,17 +2888,17 @@ const original =
     "Star Dream -Millenium Vision-":
     [
         {
-            index: 489,
+            index: 490,
             lv: 1.0,
             notes: 387
         },
         {
-            index: 490,
+            index: 491,
             lv: 6.0,
             notes: 726
         },
         {
-            index: 491,
+            index: 492,
             lv: 9.6,
             notes: 1046
         }
@@ -2901,17 +2906,17 @@ const original =
     "Trip Coffee":
     [
         {
-            index: 492,
+            index: 493,
             lv: 4.0,
             notes: 738
         },
         {
-            index: 493,
+            index: 494,
             lv: 9.6,
             notes: 1021
         },
         {
-            index: 494,
+            index: 495,
             lv: 14.1,
             notes: 1768
         }
@@ -2919,22 +2924,22 @@ const original =
     "ULTIMATE":
     [
         {
-            index: 495,
+            index: 496,
             lv: 6.0,
             notes: 841
         },
         {
-            index: 496,
+            index: 497,
             lv: 10.0,
             notes: 1131
         },
         {
-            index: 497,
+            index: 498,
             lv: 11.8,
             notes: 1450
         },
         {
-            index: 498,
+            index: 499,
             lv: 15.2,
             notes: 1822
         }
@@ -2942,17 +2947,17 @@ const original =
     "Rafflesia":
     [
         {
-            index: 499,
+            index: 500,
             lv: 9.0,
             notes: 1114
         },
         {
-            index: 500,
+            index: 501,
             lv: 12.5,
             notes: 1697
         },
         {
-            index: 501,
+            index: 502,
             lv: 16.7,
             notes: 2277
         }
@@ -2960,22 +2965,22 @@ const original =
     "Sanzui":
     [
         {
-            index: 502,
+            index: 503,
             lv: 5.0,
             notes: 774
         },
         {
-            index: 503,
+            index: 504,
             lv: 9.6,
             notes: 1075
         },
         {
-            index: 504,
+            index: 505,
             lv: 13.7,
             notes: 1583
         },
         {
-            index: 505,
+            index: 506,
             lv: 15.8,
             notes: 1986
         }
@@ -2983,17 +2988,17 @@ const original =
     "WAVE PUNCH":
     [
         {
-            index: 506,
+            index: 507,
             lv: 5.0,
             notes: 529
         },
         {
-            index: 507,
+            index: 508,
             lv: 11.7,
             notes: 1018
         },
         {
-            index: 508,
+            index: 509,
             lv: 14.9,
             notes: 1350
         }
@@ -3001,17 +3006,17 @@ const original =
     "Luminous Entities Lost Heart":
     [
         {
-            index: 509,
+            index: 510,
             lv: 7.0,
             notes: 932
         },
         {
-            index: 510,
+            index: 511,
             lv: 10.0,
             notes: 1150
         },
         {
-            index: 511,
+            index: 512,
             lv: 15.7,
             notes: 2032
         }
@@ -3019,17 +3024,17 @@ const original =
     "Secret Illumination":
     [
         {
-            index: 512,
+            index: 513,
             lv: 3.0,
             notes: 596
         },
         {
-            index: 513,
+            index: 514,
             lv: 11.0,
             notes: 1131
         },
         {
-            index: 514,
+            index: 515,
             lv: 13.2,
             notes: 1416
         }
@@ -3037,22 +3042,22 @@ const original =
     "MVURBD":
     [
         {
-            index: 515,
+            index: 516,
             lv: 5.0,
             notes: 869
         },
         {
-            index: 516,
+            index: 517,
             lv: 10.6,
             notes: 1189
         },
         {
-            index: 517,
+            index: 518,
             lv: 13.1,
             notes: 1483
         },
         {
-            index: 518,
+            index: 519,
             lv: 14.5,
             notes: 1795
         }
@@ -3060,17 +3065,17 @@ const original =
     "IGNITED":
     [
         {
-            index: 519,
+            index: 520,
             lv: 6.0,
             notes: 862
         },
         {
-            index: 520,
+            index: 521,
             lv: 11.9,
             notes: 1256
         },
         {
-            index: 521,
+            index: 522,
             lv: 14.5,
             notes: 1691
         }
@@ -3078,22 +3083,22 @@ const original =
     "Etiquette":
     [
         {
-            index: 522,
+            index: 523,
             lv: 4.0,
             notes: 598
         },
         {
-            index: 523,
+            index: 524,
             lv: 10.0,
             notes: 800
         },
         {
-            index: 524,
+            index: 525,
             lv: 13.7,
             notes: 999
         },
         {
-            index: 525,
+            index: 526,
             lv: 14.3,
             notes: 1056
         }
@@ -3101,17 +3106,17 @@ const original =
     "Dreams From Another World":
     [
         {
-            index: 526,
+            index: 527,
             lv: 9.0,
             notes: 999
         },
         {
-            index: 527,
+            index: 528,
             lv: 13.0,
             notes: 1257
         },
         {
-            index: 528,
+            index: 529,
             lv: 16.3,
             notes: 1957
         }
@@ -3119,17 +3124,17 @@ const original =
     "micro.wav":
     [
         {
-            index: 529,
+            index: 530,
             lv: 5.0,
             notes: 494
         },
         {
-            index: 530,
+            index: 531,
             lv: 11.3,
             notes: 729
         },
         {
-            index: 531,
+            index: 532,
             lv: 13.9,
             notes: 1062
         }
@@ -3137,17 +3142,17 @@ const original =
     "Rrhar'il":
     [
         {
-            index: 532,
+            index: 533,
             lv: 8.0,
             notes: 824
         },
         {
-            index: 533,
+            index: 534,
             lv: 13.4,
             notes: 1206
         },
         {
-            index: 534,
+            index: 535,
             lv: 16.8,
             notes: 1761
         }
@@ -3155,22 +3160,22 @@ const original =
     "Distorted Fate":
     [
         {
-            index: 535,
+            index: 536,
             lv: 7.0,
             notes: 1233
         },
         {
-            index: 536,
+            index: 537,
             lv: 12.0,
             notes: 1522
         },
         {
-            index: 537,
+            index: 538,
             lv: 15.8,
             notes: 1969
         },
         {
-            index: 538,
+            index: 539,
             lv: 16.8,
             notes: 2211
         }
@@ -3178,17 +3183,17 @@ const original =
     "Benighted Rewaking":
     [
         {
-            index: 539,
+            index: 540,
             lv: 7.0,
             notes: 1042
         },
         {
-            index: 540,
+            index: 541,
             lv: 11.1,
             notes: 1547
         },
         {
-            index: 541,
+            index: 542,
             lv: 14.8,
             notes: 1968
         },
@@ -3196,17 +3201,17 @@ const original =
     "Images":
     [
         {
-            index: 542,
+            index: 543,
             lv: 7.0,
             notes: 1144
         },
         {
-            index: 543,
+            index: 544,
             lv: 11.9,
             notes: 1583
         },
         {
-            index: 544,
+            index: 545,
             lv: 15.5,
             notes: 2531
         }
@@ -3214,22 +3219,22 @@ const original =
     "MULTIPHEX":
     [
         {
-            index: 545,
+            index: 546,
             lv: 6.0,
             notes: 825
         },
         {
-            index: 546,
+            index: 547,
             lv: 11.2,
             notes: 1211
         },
         {
-            index: 547,
+            index: 548,
             lv: 14.8,
             notes: 1667
         },
         {
-            index: 548,
+            index: 549,
             lv: 16.5,
             notes: 2827
         }
@@ -3237,17 +3242,17 @@ const original =
     "Luxvinore":
     [
         {
-            index: 549,
+            index: 550,
             lv: 5.0,
             notes: 897
         },
         {
-            index: 550,
+            index: 551,
             lv: 10.6,
             notes: 1235
         },
         {
-            index: 551,
+            index: 552,
             lv: 14.4,
             notes: 1719
         }
@@ -3255,22 +3260,22 @@ const original =
     "And So You Felt":
     [
         {
-            index: 552,
+            index: 553,
             lv: 4.0,
             notes: 874
         },
         {
-            index: 553,
+            index: 554,
             lv: 9.6,
             notes: 1234
         },
         {
-            index: 554,
+            index: 555,
             lv: 12.2,
             notes: 1639
         },
         {
-            index: 555,
+            index: 556,
             lv: 15.4,
             notes: 2163
         }
@@ -3278,22 +3283,22 @@ const original =
     "Synthesis.":
     [
         {
-            index: 556,
+            index: 557,
             lv: 6.0,
             notes: 1011
         },
         {
-            index: 557,
+            index: 558,
             lv: 10.6,
             notes: 1334
         },
         {
-            index: 558,
+            index: 559,
             lv: 14.8,
             notes: 1861
         },
         {
-            index: 559,
+            index: 560,
             lv: 16.1,
             notes: 2336
         }
@@ -3301,17 +3306,17 @@ const original =
     "When the Dragon Falls":
     [
         {
-            index: 560,
+            index: 561,
             lv: 4.0,
             notes: 942
         },
         {
-            index: 561,
+            index: 562,
             lv: 10.6,
             notes: 1464
         },
         {
-            index: 562,
+            index: 563,
             lv: 15.8,
             notes: 2139
         }
@@ -3319,22 +3324,22 @@ const original =
     "Surtr's Wish":
     [
         {
-            index: 563,
+            index: 564,
             lv: 8.0,
             notes: 963
         },
         {
-            index: 564,
+            index: 565,
             lv: 11.6,
             notes: 1287
         },
         {
-            index: 565,
+            index: 566,
             lv: 15.9,
             notes: 1810
         },
         {
-            index: 566,
+            index: 567,
             lv: 16.9,
             notes: 2129
         }
@@ -3342,22 +3347,22 @@ const original =
     ":3c":
     [
         {
-            index: 567,
+            index: 568,
             lv: 8.0,
             notes: 1187
         },
         {
-            index: 568,
+            index: 569,
             lv: 12.2,
             notes: 1824
         },
         {
-            index: 569,
+            index: 570,
             lv: 15.2,
             notes: 2294
         },
         {
-            index: 570,
+            index: 571,
             lv: 16.5,
             notes: 2717
         }
@@ -3365,22 +3370,22 @@ const original =
     "APOCALYPSE CALL":
     [
         {
-            index: 571,
+            index: 572,
             lv: 10.0,
             notes: 1348
         },
         {
-            index: 572,
+            index: 573,
             lv: 13.7,
             notes: 2047
         },
         {
-            index: 573,
+            index: 574,
             lv: 17.6,
             notes: 2696
         },
         {
-            index: 574,
+            index: 575,
             lv: 17.9,
             notes: 3237
         }
