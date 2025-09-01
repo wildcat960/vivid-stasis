@@ -1,6 +1,6 @@
-const ver = "vivid/stasis v5.1.1.1";
-const upd = "Last updated 17.08.2025";
-const packs = [0, 41, 85, 145, 180, 220, 268, 315, 460, 551, 577];
+const ver = "vivid/stasis v5.1.2";
+const upd = "Last updated 01.09.2025";
+const packs = [0, 41, 85, 145, 180, 220, 268, 315, 460, 555, 581];
 const original = 
 {
     "grode":
@@ -3244,20 +3244,43 @@ const original =
             notes: 2827
         }
     ],
-    "Luxvinore":
+    "Some More of That Song":
     [
         {
             index: 551,
+            lv: 3.0,
+            notes: 551
+        },
+        {
+            index: 552,
+            lv: 9.0,
+            notes: 985
+        },
+        {
+            index: 553,
+            lv: 11.8,
+            notes: 1546
+        },
+        {
+            index: 554,
+            lv: 12.9,
+            notes: 1687
+        }
+    ],
+    "Luxvinore":
+    [
+        {
+            index: 555,
             lv: 5.0,
             notes: 897
         },
         {
-            index: 552,
+            index: 556,
             lv: 10.6,
             notes: 1235
         },
         {
-            index: 553,
+            index: 557,
             lv: 14.4,
             notes: 1719
         }
@@ -3265,22 +3288,22 @@ const original =
     "And So You Felt":
     [
         {
-            index: 554,
+            index: 558,
             lv: 4.0,
             notes: 874
         },
         {
-            index: 555,
+            index: 559,
             lv: 9.6,
             notes: 1234
         },
         {
-            index: 556,
+            index: 560,
             lv: 12.2,
             notes: 1639
         },
         {
-            index: 557,
+            index: 561,
             lv: 15.4,
             notes: 2163
         }
@@ -3288,22 +3311,22 @@ const original =
     "Synthesis.":
     [
         {
-            index: 558,
+            index: 562,
             lv: 6.0,
             notes: 1011
         },
         {
-            index: 559,
+            index: 563,
             lv: 10.6,
             notes: 1334
         },
         {
-            index: 560,
+            index: 564,
             lv: 14.8,
             notes: 1861
         },
         {
-            index: 561,
+            index: 565,
             lv: 16.1,
             notes: 2336
         }
@@ -3311,17 +3334,17 @@ const original =
     "When the Dragon Falls":
     [
         {
-            index: 562,
+            index: 566,
             lv: 4.0,
             notes: 942
         },
         {
-            index: 563,
+            index: 567,
             lv: 10.6,
             notes: 1464
         },
         {
-            index: 564,
+            index: 568,
             lv: 15.8,
             notes: 2139
         }
@@ -3329,22 +3352,22 @@ const original =
     "Surtr's Wish":
     [
         {
-            index: 565,
+            index: 569,
             lv: 8.0,
             notes: 963
         },
         {
-            index: 566,
+            index: 570,
             lv: 11.6,
             notes: 1287
         },
         {
-            index: 567,
+            index: 571,
             lv: 15.9,
             notes: 1810
         },
         {
-            index: 568,
+            index: 572,
             lv: 16.9,
             notes: 2129
         }
@@ -3352,22 +3375,22 @@ const original =
     ":3c":
     [
         {
-            index: 569,
+            index: 573,
             lv: 8.0,
             notes: 1187
         },
         {
-            index: 570,
+            index: 574,
             lv: 12.2,
             notes: 1824
         },
         {
-            index: 571,
+            index: 575,
             lv: 15.2,
             notes: 2294
         },
         {
-            index: 572,
+            index: 576,
             lv: 16.5,
             notes: 2717
         }
@@ -3375,22 +3398,22 @@ const original =
     "APOCALYPSE CALL":
     [
         {
-            index: 573,
+            index: 577,
             lv: 10.0,
             notes: 1348
         },
         {
-            index: 574,
+            index: 578,
             lv: 13.7,
             notes: 2047
         },
         {
-            index: 575,
+            index: 579,
             lv: 17.6,
             notes: 2696
         },
         {
-            index: 576,
+            index: 580,
             lv: 18.1,
             notes: 3237
         }
