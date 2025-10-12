@@ -1,5 +1,5 @@
 const byIndex = [];
-const prefs = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3];
+const prefs = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3];
 const data = {};
 const cts = ["", "FC", "AC", "AAC"];
 const ctCounts = [[0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]];
@@ -212,7 +212,7 @@ function toggleDiff(a)
             const li = document.getElementById("c" + orig.index);
             if (prefs[j] && prefs[chart.ct + 5])
             {
-                for (let k = 0; k < 10; k++)
+                for (let k = 0; k < 11; k++)
                 {
                     if (packs[k] <= orig.index && orig.index < packs[k + 1])
                     {
