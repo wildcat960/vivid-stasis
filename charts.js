@@ -1,6 +1,6 @@
-const ver = "vivid/stasis v5.2.0";
-const upd = "Last updated 12.10.2025";
-const packs = [0, 41, 86, 146, 181, 221, 269, 316, 320, 465, 560, 586];
+const ver = "vivid/stasis v5.3.1";
+const upd = "Last updated 17.11.2025";
+const packs = [0, 41, 86, 146, 181, 221, 269, 316, 320, 465, 566, 592];
 const original = 
 {
     "grode":
@@ -3295,20 +3295,56 @@ const original =
             notes: 1687
         }
     ],
-    "Luxvinore":
+    "ABSOLUTION (A-Saph Remix)":
     [
         {
             index: 560,
+            lv: 4.0,
+            notes: 803
+        },
+        {
+            index: 561,
+            lv: 11.5,
+            notes: 1325
+        },
+        {
+            index: 562,
+            lv: 15.1,
+            notes: 1846
+        }
+    ],
+    "Crusader Mk.III (Stelli Edit)":
+    [
+        {
+            index: 563,
+            lv: 5.0,
+            notes: 474
+        },
+        {
+            index: 564,
+            lv: 9.0,
+            notes: 665
+        },
+        {
+            index: 565,
+            lv: 12.7,
+            notes: 1107
+        }
+    ],
+    "Luxvinore":
+    [
+        {
+            index: 566,
             lv: 5.0,
             notes: 897
         },
         {
-            index: 561,
+            index: 567,
             lv: 10.6,
             notes: 1235
         },
         {
-            index: 562,
+            index: 568,
             lv: 14.4,
             notes: 1719
         }
@@ -3316,22 +3352,22 @@ const original =
     "And So You Felt":
     [
         {
-            index: 563,
+            index: 569,
             lv: 4.0,
             notes: 874
         },
         {
-            index: 564,
+            index: 570,
             lv: 9.6,
             notes: 1234
         },
         {
-            index: 565,
+            index: 571,
             lv: 12.2,
             notes: 1639
         },
         {
-            index: 566,
+            index: 572,
             lv: 15.4,
             notes: 2163
         }
@@ -3339,22 +3375,22 @@ const original =
     "Synthesis.":
     [
         {
-            index: 567,
+            index: 573,
             lv: 6.0,
             notes: 1011
         },
         {
-            index: 568,
+            index: 574,
             lv: 10.6,
             notes: 1334
         },
         {
-            index: 569,
+            index: 575,
             lv: 14.8,
             notes: 1861
         },
         {
-            index: 570,
+            index: 576,
             lv: 16.1,
             notes: 2336
         }
@@ -3362,17 +3398,17 @@ const original =
     "When the Dragon Falls":
     [
         {
-            index: 571,
+            index: 577,
             lv: 4.0,
             notes: 942
         },
         {
-            index: 572,
+            index: 578,
             lv: 10.6,
             notes: 1464
         },
         {
-            index: 573,
+            index: 579,
             lv: 15.8,
             notes: 2139
         }
@@ -3380,22 +3416,22 @@ const original =
     "Surtr's Wish":
     [
         {
-            index: 574,
+            index: 580,
             lv: 8.0,
             notes: 963
         },
         {
-            index: 575,
+            index: 581,
             lv: 11.6,
             notes: 1287
         },
         {
-            index: 576,
+            index: 582,
             lv: 15.9,
             notes: 1810
         },
         {
-            index: 577,
+            index: 583,
             lv: 16.9,
             notes: 2129
         }
@@ -3403,22 +3439,22 @@ const original =
     ":3c":
     [
         {
-            index: 578,
+            index: 584,
             lv: 8.0,
             notes: 1187
         },
         {
-            index: 579,
+            index: 585,
             lv: 12.2,
             notes: 1824
         },
         {
-            index: 580,
+            index: 586,
             lv: 15.2,
             notes: 2294
         },
         {
-            index: 581,
+            index: 587,
             lv: 16.5,
             notes: 2717
         }
@@ -3426,22 +3462,22 @@ const original =
     "APOCALYPSE CALL":
     [
         {
-            index: 582,
+            index: 588,
             lv: 10.0,
             notes: 1348
         },
         {
-            index: 583,
+            index: 589,
             lv: 13.7,
             notes: 2047
         },
         {
-            index: 584,
+            index: 590,
             lv: 17.6,
             notes: 2696
         },
         {
-            index: 585,
+            index: 591,
             lv: 18.1,
             notes: 3237
         }
