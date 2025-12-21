@@ -98,7 +98,7 @@
                 <button onclick="sortCharts('diff')">Difficulty</button>
                 <button onclick="sortCharts('name')">Title</button>
                 <button onclick="sortCharts('notes')">Note count</button>
-                <button onclick="sortCharts('lost')">Crits to AAC</button>
+                <button onclick="sortCharts('crits')">Crits to AAC</button>
                 <button onclick="sortCharts('score')">Score</button>
                 <button onclick="sortCharts('ct')">Clear type</button>
                 <button onclick="sortCharts('rate')">Play rate</button>
@@ -107,8 +107,9 @@
             <button id="pref4" onclick="toggleDiff(4)"></button>
         </div>
         <div id="save">
-            <button onclick="save()">Copy</button>
-            <button onclick="load()">Paste</button>
+            <button onclick="manual()">Manual save</button>
+            <button onclick="load()">Import</button>
+            <button onclick="save()">Export</button>
             <button onclick="reset()">Reset</button>
         </div>
         <div id="info">
@@ -118,7 +119,7 @@
             <div id="lax">
                 <a href="https://github.com/wildcat960/vivid-stasis/">Github</a>
                 <p>Made by wildcat960</p>
-                <p id="upd">Last updated 13.06.2025</p>
+                <p id="upd"></p>
             </div>
         </div>
         <script src="charts.js"></script>

@@ -1,5 +1,5 @@
 const ver = "vivid/stasis v5.3.1";
-const upd = "Last updated 17.11.2025";
+const upd = "Last updated 22.12.2025";
 const packs = [0, 41, 86, 146, 181, 221, 269, 316, 320, 465, 566, 592];
 const original = 
 {
