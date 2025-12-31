@@ -220,7 +220,7 @@ function actuallyLoad(a)
 }
 function load()
 {
-    if (!navigator.clipboard && navigator.clipboard.readText)
+    if (navigator.clipboard && navigator.clipboard.readText)
         navigator.clipboard.readText().then(function(A) {actuallyLoad(A)});
     else
         actuallyLoad(prompt());
@@ -535,4 +535,5 @@ function shuffleCharts()
     }
     for (let i of charts)
         list.appendChild(i);
+
 }
