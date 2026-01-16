@@ -1,3 +1,7 @@
+*:focus
+{
+    outline: none;
+}
 body
 {
     font-family: monospace;
@@ -23,13 +27,10 @@ body
 }
 #list
 {
-    list-style: none;
-    padding: 0;
+    border: 2px solid white;
 }
 .chart
 {
-    border: 2px solid white;
-    margin: 20px 0;
     display: flex;
     text-align: center;
 }
@@ -81,13 +82,13 @@ button:hover
     border: 2px solid white;
     flex-grow: 1;
 }
-.name
-{
-    flex: 1 0 0;
-}
 .lv
 {
     width: 48px;
+}
+.name
+{
+    flex: 1 0 0;
 }
 .notes
 {
@@ -108,6 +109,22 @@ button:hover
 .rate
 {
     width: 60px;
+}
+.ex
+{
+    width: 60px;
+}
+.perc
+{
+    width: 72px;
+}
+.xrate
+{
+    width: 48px;
+}
+.index
+{
+    width: 24px;
 }
 .diffs > button
 {
@@ -144,7 +161,7 @@ button:hover
 }
 #stats > div > span
 {
-    padding: 10px;
+    padding: 10px 20px;
     border: 2px solid white;
     width: 48px;
 }
@@ -179,4 +196,38 @@ button:hover
 {
     margin: 0;
     flex-grow: 1;
+}
+#rt
+{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border: 2px solid white;
+}
+#rt > div
+{
+    display: flex;
+}
+#rt > div > span
+{
+    border: 2px solid white;
+    padding: 10px 20px;
+    width: 144px;
+}
+#b40
+{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border: 2px solid white;
+    margin: 120px 0;
+}
+#b40 > div
+{
+    display: flex;
+}
+#b40 > div > span
+{
+    border: 2px solid white;
+    padding: 10px 20px;
 }

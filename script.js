@@ -1,10 +1,10 @@
 const byIndex = [];
-const prefs = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3];
+const prefs = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4];
 const data = {};
 const cts = ["", "FC", "AC", "AAC"];
 const ctCounts = [[0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]];
 const colours = ["#1aff55", "#1ab9ff", "#ff1a4a", "#c342ff", "#000000"];
-const tabs = [["charts", "block"], ["stats", "flex"], ["save", "flex"], ["info", "block"]];
+const tabs = [["charts", "block"], ["rating", "block"], ["stats", "flex"], ["save", "flex"], ["info", "block"]];
 const ctColours =
 [
     [
@@ -21,6 +21,138 @@ const ctColours =
     ]
 ]
 const list = document.getElementById("list");
+function updateRating()
+{   
+    const t = document.getElementById("b40").children;
+    const b30 = [];  
+    for (let i = 0; i < 30; i++)
+        b30.push({title: "N/A", rate: 0});
+    for (let i in original)
+    {
+        if (i == "acta est fabula, plaudite")
+            continue;
+        for (let j = 0; j < original[i].length; j++)
+        {
+            const orig = original[i][j];
+            const chart = data[i][j];
+            const score = 1010000 - chart.crits * 10000 / orig.notes;
+            let rate = 0;
+            if (score >= 600000)
+            {
+                rate = orig.lv * 1000;
+                if (score < 950000)
+                    rate += (score - 1000000) / 50;
+                else if (score < 980000)
+                    rate += (score - 980000) / 30;
+                else if (score < 1000000)
+                    rate += (score - 980000) / 20;
+                else if (score < 1008000)
+                    rate += (score - 990000) / 10;
+                else
+                    rate += 1800;
+                rate = Math.max(rate, 0);
+            }
+            if (chart.ct == 1)
+                rate += 100;
+            else if (chart.ct)
+                rate += 200;
+            b30.push({title: i, diff: j, lv: orig.lv, score: score, ct: chart.ct, rate: rate});
+        }
+    }   
+    b30.sort(function(a, b) {return b.rate - a.rate});
+    for (let i = 0; i < 30; i++)
+    {
+        const u = t[i + 1].children;
+        u[1].textContent = b30[i].title;
+        u[5].textContent = Math.round(b30[i].rate);
+        if (b30[i].title != "N/A")
+        {
+            u[2].textContent = b30[i].lv.toFixed(1);
+            u[2].style.backgroundColor = colours[b30[i].diff];
+            u[3].textContent = Math.round(b30[i].score);
+            u[4].textContent = cts[b30[i].ct];
+            u[4].style.backgroundImage = ctColours[prefs[4]][b30[i].ct];
+        }
+    }
+    const b10 = [];  
+    for (let i = 0; i < 10; i++)
+        b10.push({title: "N/A", rate: 0});
+    for (let i in original)
+    {
+        if (i == "acta est fabula, plaudite")
+            continue;
+        for (let j = 0; j < original[i].length; j++)
+        {
+            const orig = original[i][j];
+            const chart = data[i][j];
+            const xp = (100 * chart.ex) / (3 * orig.notes);
+            let rate = 0;
+            if (xp >= 80)
+            {    
+                if (xp < 90)
+                    rate = (5 * xp - 350) / 2;
+                else if (xp < 93)
+                    rate = (20 * xp - 1650) / 3;
+                else if (xp < 98)
+                    rate = 5 * xp - 395;
+                else if (xp < 99)
+                    rate = (15 * xp - 995) / 5;
+                else if (xp < 100)
+                    rate = 2 * xp - 100;
+                else
+                    rate = 100;
+            }
+            b10.push({title: i, diff: j, lv: orig.lv, ex: chart.ex, xp: xp, rate: orig.lv * rate});
+        }
+    }  
+    b10.sort(function(a, b) {return b.rate - a.rate});
+    for (let i = 0; i < 10; i++)
+    {
+        const u = t[i + 32].children;
+        u[1].textContent = b10[i].title;
+        u[5].textContent = Math.round(b10[i].rate);
+        if (b10[i].title != "N/A")
+        {
+            u[2].textContent = b10[i].lv.toFixed(1);
+            u[2].style.backgroundColor = colours[b10[i].diff];
+            u[3].textContent = b10[i].ex;
+            u[4].textContent = b10[i].xp.toFixed(2);
+            u[4].style.backgroundImage = ctColours[prefs[4]][b10[i].ct];
+        }
+    }
+    const u = document.getElementById("rt").children;
+    let lr = 0;
+    for (let i = 0; i < 30; i++)
+        lr += Math.round(b30[i].rate);
+    lr /= 30;
+    u[0].children[1].textContent = lr.toFixed(5);
+    let xr = 0;
+    for (let i = 0; i < 10; i++)
+        xr += Math.round(b10[i].rate);
+    xr /= 10;
+    u[1].children[1].textContent = xr.toFixed(5);
+    let cr = 0;
+    for (let i in original)
+    {
+        const c = original[i].length;
+        for (let j = 0; j < c; j++)
+        {
+            let score = 1010000 - data[i][j].crits * 10000 / original[i][j].notes;
+            for (let k = j + 1; k < c; k++)
+            {
+                const sc = 1010000 - data[i][k].crits * 10000 / original[i][k].notes;
+                if (sc > score)
+                    score = sc;
+            }
+            if (score < 710000)
+                continue;
+            cr += Math.pow((score - 710000) / 20000, 1.7005483075) * 10 / c;
+        }
+    }
+    cr /= 196;
+    u[2].children[1].textContent = cr.toFixed(5);
+    u[3].children[1].textContent = (lr + xr + cr).toFixed(5);
+}
 function updateStats()
 {
     for (let i = 0; i < 6; i++)
@@ -55,17 +187,16 @@ function updateStats()
 function updateScore(li, chart, orig)
 {
     const stats = li.children;
-    let score = stats[4].value;
-    score = Math.max(0, Math.min(score, 1010000));
+    const score = Math.max(0, Math.min(stats[4].value, 1010000));
     chart.crits = 101 * orig.notes - Math.round(score * orig.notes / 10000);
     let rate = 0;
     if (score >= 600000)
     {
         rate = orig.lv * 1000;
         if (score < 950000)
-            rate += (score - 1000000) / 50;
+            rate += (score - 975000) / 50;
         else if (score < 980000)
-            rate += (score - 980000) / 30;
+            rate += (score - 980000) / 60;
         else if (score < 1000000)
             rate += (score - 980000) / 20;
         else if (score < 1008000)
@@ -82,14 +213,13 @@ function updateScore(li, chart, orig)
     stats[6].textContent = Math.round(rate);
     stats[5].textContent = cts[chart.ct];
     stats[5].style.backgroundImage = ctColours[prefs[4]][chart.ct];
-    updateStats();
 }
 function updateCrits(li, chart, orig)
 {
     const stats = li.children;
     chart.crits = stats[3].value;
     chart.crits = Math.max(0, Math.min(chart.crits, 101 * orig.notes));
-    let score = 1010000 - chart.crits * 10000 / orig.notes;
+    const score = 1010000 - chart.crits * 10000 / orig.notes;
     let rate = 0;
     if (score >= 600000)
     {
@@ -114,7 +244,6 @@ function updateCrits(li, chart, orig)
     stats[6].textContent = Math.round(rate);
     stats[5].textContent = cts[chart.ct];
     stats[5].style.backgroundImage = ctColours[prefs[4]][chart.ct];
-    updateStats();
 }
 function getScore(i, diff)
 {
@@ -135,8 +264,80 @@ function getCrits(i, diff)
     const li = document.getElementById("c" + orig.index);
     const a = parseInt(li.children[3].value);
     if (isNaN(a) || a < 0 || a > 101 * orig.notes)
-        return
+        return;
     updateCrits(li, chart, orig);
+    if (localStorage)
+        localStorage.data = JSON.stringify(data);
+}
+function updateEx(li, chart, orig)
+{
+    const stats = li.children;
+    chart.ex = stats[7].value;
+    const xp = (100 * chart.ex) / (3 * orig.notes);
+    stats[8].value = xp.toFixed(2);
+    let rate = 0;
+    if (xp >= 80)
+    {    
+        if (xp < 90)
+            rate = (5 * xp - 350) / 2;
+        else if (xp < 93)
+            rate = (20 * xp - 1650) / 3;
+        else if (xp < 98)
+            rate = 5 * xp - 395;
+        else if (xp < 99)
+            rate = (15 * xp - 995) / 5;
+        else if (xp < 100)
+            rate = 2 * xp - 100;
+        else
+            rate = 100;
+    }
+    stats[9].textContent = Math.round(orig.lv * rate);
+}
+function updateXp(li, chart, orig)
+{
+    const stats = li.children;
+    const xp = stats[8].value;
+    chart.ex = Math.round(3 * orig.notes * xp / 100);
+    stats[7].value = chart.ex;
+    let rate = 0;
+    if (xp >= 80)
+    {    
+        if (xp < 90)
+            rate = (5 * xp - 350) / 2;
+        else if (xp < 93)
+            rate = (20 * xp - 1650) / 3;
+        else if (xp < 98)
+            rate = 5 * xp - 395;
+        else if (xp < 99)
+            rate = (15 * xp - 995) / 5;
+        else if (xp < 100)
+            rate = 2 * xp - 100;
+        else
+            rate = 100;
+    }
+    stats[9].textContent = Math.round(orig.lv * rate);
+}
+function getEx(i, diff)
+{
+    const chart = data[i][diff];
+    const orig = original[i][diff];
+    const li = document.getElementById("c" + orig.index);
+    const a = parseInt(li.children[7].value);
+    if (isNaN(a) || a < 0 || a > 3 * orig.notes)
+        return;
+    updateEx(li, chart, orig);
+    if (localStorage)
+        localStorage.data = JSON.stringify(data);
+}
+function getXp(i, diff)
+{
+    const chart = data[i][diff];
+    const orig = original[i][diff];
+    const li = document.getElementById("c" + orig.index);
+    const a = parseFloat(li.children[8].value);
+    if (isNaN(a) || a < 0 || a > 100)
+        return;
+    updateXp(li, chart, orig);
     if (localStorage)
         localStorage.data = JSON.stringify(data);
 }
@@ -157,10 +358,6 @@ function updateCt(i, diff)
         chart.score = 1010000;
         li.children[4].value = 1010000;
     }
-    if (prefs[chart.ct + 5])
-        li.style.display = "flex";
-    else
-        li.style.display = "none";
     updateScore(li, chart, orig);
     if (localStorage)
         localStorage.data = JSON.stringify(data);
@@ -189,17 +386,23 @@ function copyData(b)
             {
                 if (j < data[i].length)
                 {
-                    data[i][j].ct = b[i][j].ct;
+                    if (b[i][j].hasOwnProperty("ct"))
+                        data[i][j].ct = b[i][j].ct;
                     const li = document.getElementById("c" + original[i][j].index);
                     if (b[i][j].hasOwnProperty("score"))
                     {
                         li.children[4].value = Math.round(b[i][j].score);
                         updateScore(li, data[i][j], original[i][j]);
                     }
-                    else
+                    else if (b[i][j].hasOwnProperty("crits"))
                     {
                         li.children[3].value = b[i][j].crits;
                         updateCrits(li, data[i][j], original[i][j]);
+                    }
+                    if (b[i][j].hasOwnProperty("ex"))
+                    {
+                        li.children[7].value = b[i][j].ex;
+                        updateEx(li, data[i][j], original[i][j]);
                     }
                 }
             }
@@ -235,6 +438,8 @@ function reset()
             li.children[4].value = 0;
             data[i][j].ct = 0;
             updateScore(li, data[i][j], original[i][j]);
+            li.children[7].value = 0;
+            updateEx(li, data[i][j], original[i][j]);
         }
     }
     localStorage.data = JSON.stringify(data);
@@ -315,6 +520,10 @@ function switchTab(a)
             u[i].style.backgroundColor = "black";
         }
     }
+    if (a == 2)
+        updateStats();
+    if (a == 1)
+        updateRating();
 }
 function loadPrefs(b)
 {
@@ -346,7 +555,7 @@ function init()
         data[i] = [];
         for (let j = 0; j < original[i].length; j++)
         {
-            data[i].push({crits: 101 * original[i][j].notes, ct: 0});
+            data[i].push({crits: 101 * original[i][j].notes, ct: 0, ex: 0});
             byIndex[original[i][j].index] = [i, j];
         }
     }
@@ -356,7 +565,7 @@ function init()
         {
             const orig = original[i][diff];
             const chart = data[i][diff];
-            const li = document.createElement("li");
+            const li = document.createElement("div");
             li.id = "c" + orig.index;
             li.classList.add("chart");
             const name = document.createElement("span");
@@ -393,6 +602,19 @@ function init()
             const rate = document.createElement("span");
             rate.classList.add("stat");
             rate.classList.add("rate");
+            const ex = document.createElement("input");
+            ex.classList.add("stat");
+            ex.classList.add("ex");
+            ex.classList.add("clickable");
+            ex.oninput = function() {getEx(i, diff)};
+            const xp = document.createElement("input");
+            xp.classList.add("stat");
+            xp.classList.add("perc");
+            xp.classList.add("clickable");
+            xp.oninput = function() {getXp(i, diff)};
+            const xr = document.createElement("span");
+            xr.classList.add("stat");
+            xr.classList.add("xrate");
             li.appendChild(lv);
             li.appendChild(name);
             li.appendChild(notes);
@@ -400,6 +622,9 @@ function init()
             li.appendChild(score);
             li.appendChild(ct);
             li.appendChild(rate);
+            li.appendChild(ex);
+            li.appendChild(xp);
+            li.appendChild(xr);
             updateScore(li, data[i][diff], original[i][diff]);
             list.appendChild(li);
         }
@@ -426,6 +651,12 @@ function init()
 }
 function sortBy(aa, bb, stat)
 {
+    if (aa.id == "c" && bb.id == "c")
+        return 0;
+    if (aa.id == "c")
+        return -1;
+    if (bb.id == "c")
+        return 1;
     a = byIndex[aa.id.slice(1)];
     b = byIndex[bb.id.slice(1)];
     const origA = original[a[0]][a[1]];
@@ -440,9 +671,9 @@ function sortBy(aa, bb, stat)
     {
         rateA = origA.lv * 1000;
         if (scoreA < 950000)
-            rateA += (scoreA - 1000000) / 50;
+            rateA += (scoreA - 975000) / 50;
         else if (scoreA < 980000)
-            rateA += (scoreA - 980000) / 30;
+            rateA += (scoreA - 980000) / 60;
         else if (scoreA < 1000000)
             rateA += (scoreA - 980000) / 20;
         else if (scoreA < 1008000)
@@ -463,9 +694,9 @@ function sortBy(aa, bb, stat)
     {
         rateB = origB.lv * 1000;
         if (scoreB < 950000)
-            rateB += (scoreB - 1000000) / 50;
+            rateB += (scoreB - 975000) / 50;
         else if (scoreB < 980000)
-            rateB += (scoreB - 980000) / 30;
+            rateB += (scoreB - 980000) / 60;
         else if (scoreB < 1000000)
             rateB += (scoreB - 980000) / 20;
         else if (scoreB < 1008000)
@@ -486,6 +717,40 @@ function sortBy(aa, bb, stat)
             return 1;
         return -1;
     }
+    const xpA = (100 * chartA.ex) / (3 * origA.notes);
+    let xrA = 0;
+    if (xpA >= 80)
+    {    
+        if (xpA < 90)
+            xrA = (5 * xpA - 350) / 2;
+        else if (xpA < 93)
+            xrA = (20 * xpA - 1650) / 3;
+        else if (xpA < 98)
+            xrA = 5 * xpA - 395;
+        else if (xpA < 99)
+            xrA = (15 * xpA - 995) / 5;
+        else if (xpA < 100)
+            xrA = 2 * xpA - 100;
+        else
+            xrA = 100;
+    }
+    const xpB = (100 * chartB.ex) / (3 * origB.notes);
+    let xrB = 0;
+    if (xpB >= 80)
+    {    
+        if (xpB < 90)
+            xrB = (5 * xpB - 350) / 2;
+        else if (xpB < 93)
+            xrB = (20 * xpB - 1650) / 3;
+        else if (xpB < 98)
+            xrB = 5 * xpB - 395;
+        else if (xpB < 99)
+            xrB = (15 * xpB - 995) / 5;
+        else if (xpB < 100)
+            xrB = 2 * xpB - 100;
+        else
+            xrB = 100;
+    }
     if (stat == "lv")
         return origA.lv - origB.lv;
     if (stat == "diff")
@@ -500,6 +765,12 @@ function sortBy(aa, bb, stat)
         return rateA - rateB;
     if (stat == "score")
         return scoreA - scoreB;
+    if (stat == "ex")
+        return chartA.ex - chartB.ex;
+    if (stat == "xp")
+        return xpA - xpB;
+    if (stat == "xr")
+        return xrA - xrB;
     return origA.index - origB.index;
 }
 function sortCharts(stat)
@@ -516,8 +787,8 @@ function reverseCharts()
 {
     const t = list.children;
     const charts = [];
-    for (let i of t)
-        charts.push(i);
+    for (let i = 1; i < t.length; i++)
+        charts.push(t[i]);
     charts.reverse();
     for (let i of charts)
         list.appendChild(i);
@@ -526,8 +797,8 @@ function shuffleCharts()
 {
     const t = list.children;
     const charts = [];
-    for (let i of t)
-        charts.push(i);
+    for (let i = 1; i < t.length; i++)
+        charts.push(t[i]);
     for (let i = charts.length; i > 0; i--)
     {
         const j = Math.floor(Math.random() * i);
@@ -535,5 +806,4 @@ function shuffleCharts()
     }
     for (let i of charts)
         list.appendChild(i);
-
 }
