@@ -211,8 +211,6 @@ function updateScore(li, chart, orig)
         rate += 200;
     stats[3].value = chart.crits;
     stats[6].textContent = Math.round(rate);
-    stats[5].textContent = cts[chart.ct];
-    stats[5].style.backgroundImage = ctColours[prefs[4]][chart.ct];
 }
 function updateCrits(li, chart, orig)
 {
@@ -242,8 +240,6 @@ function updateCrits(li, chart, orig)
         rate += 200;
     stats[4].value = Math.round(score);
     stats[6].textContent = Math.round(rate);
-    stats[5].textContent = cts[chart.ct];
-    stats[5].style.backgroundImage = ctColours[prefs[4]][chart.ct];
 }
 function getScore(i, diff)
 {
@@ -349,16 +345,14 @@ function updateCt(i, diff)
     chart.ct++;
     if (chart.ct > 3)
     {
-        chart.score = 0;
         li.children[4].value = 0;
         chart.ct = 0;
     }
     if (chart.ct == 3)
-    {
-        chart.score = 1010000;
         li.children[4].value = 1010000;
-    }
     updateScore(li, chart, orig);
+    li.children[5].textContent = cts[chart.ct];
+    li.children[5].style.backgroundImage = ctColours[prefs[4]][chart.ct];
     if (localStorage)
         localStorage.data = JSON.stringify(data);
 }
@@ -387,7 +381,11 @@ function copyData(b)
                 if (j < data[i].length)
                 {
                     if (b[i][j].hasOwnProperty("ct"))
-                        data[i][j].ct = b[i][j].ct;
+                    {
+                        data[i][j].ct = 0;
+                        for (let k = b[i][j].ct; k; k--)
+                            updateCt(i, j);
+                    }
                     const li = document.getElementById("c" + original[i][j].index);
                     if (b[i][j].hasOwnProperty("score"))
                     {
@@ -555,7 +553,7 @@ function init()
         data[i] = [];
         for (let j = 0; j < original[i].length; j++)
         {
-            data[i].push({crits: 101 * original[i][j].notes, ct: 0, ex: 0});
+            data[i].push({crits: 101 * original[i][j].notes, ct: 0, ex: 0, x: 3 * original[i][j].index});
             byIndex[original[i][j].index] = [i, j];
         }
     }
@@ -564,7 +562,6 @@ function init()
         for (let diff = 0; diff < original[i].length; diff++)
         {
             const orig = original[i][diff];
-            const chart = data[i][diff];
             const li = document.createElement("div");
             li.id = "c" + orig.index;
             li.classList.add("chart");
@@ -607,6 +604,7 @@ function init()
             ex.classList.add("ex");
             ex.classList.add("clickable");
             ex.oninput = function() {getEx(i, diff)};
+            ex.value = 0;
             const xp = document.createElement("input");
             xp.classList.add("stat");
             xp.classList.add("perc");
@@ -615,6 +613,11 @@ function init()
             const xr = document.createElement("span");
             xr.classList.add("stat");
             xr.classList.add("xrate");
+            const x = document.createElement("input");
+            x.classList.add("stat");
+            x.classList.add("ex");
+            x.classList.add("clickable");
+            x.value = 3 * orig.notes;
             li.appendChild(lv);
             li.appendChild(name);
             li.appendChild(notes);
@@ -625,7 +628,9 @@ function init()
             li.appendChild(ex);
             li.appendChild(xp);
             li.appendChild(xr);
-            updateScore(li, data[i][diff], original[i][diff]);
+            li.appendChild(x);
+            updateScore(li, data[i][diff], orig);
+            updateEx(li, data[i][diff], orig);
             list.appendChild(li);
         }
     }
@@ -644,7 +649,10 @@ function init()
     }
     catch (e)
     {
-        loadPrefs(prefs);
+        const cp = [];
+        for (let i of  prefs)
+            cp.push(i);
+        loadPrefs(cp);
         if (localStorage)
             localStorage.prefs = JSON.stringify(prefs);
     }
