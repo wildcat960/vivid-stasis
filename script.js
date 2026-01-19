@@ -402,6 +402,11 @@ function copyData(b)
                         li.children[7].value = b[i][j].ex;
                         updateEx(li, data[i][j], original[i][j]);
                     }
+                    if (b[i][j].hasOwnProperty("x"))
+                    {
+                        li.children[10].value = b[i][j].x;
+                        data[i][j].x = b[i][j].x;
+                    }
                 }
             }
         }
@@ -540,7 +545,7 @@ function loadPrefs(b)
 function init()
 {
     document.getElementById("ver").textContent = ver;
-    document.getElementById("upd").textContent = upd
+    document.getElementById("upd").textContent = upd;
     const charts = document.getElementById("stats").children;
     const chartsT = charts[0].children;
     for (let i = 0; i < 4; i++)
@@ -553,7 +558,7 @@ function init()
         data[i] = [];
         for (let j = 0; j < original[i].length; j++)
         {
-            data[i].push({crits: 101 * original[i][j].notes, ct: 0, ex: 0, x: 3 * original[i][j].index});
+            data[i].push({crits: 101 * original[i][j].notes, ct: 0, ex: 0, x: 3 * original[i][j].notes});
             byIndex[original[i][j].index] = [i, j];
         }
     }
@@ -570,7 +575,7 @@ function init()
             name.classList.add("stat");
             name.classList.add("name");
             name.classList.add("clickable");
-            name.addEventListener("click", function() {list.appendChild(li)});
+            name.addEventListener("click", function() {list.appendChild(li);});
             const lv = document.createElement("span");
             lv.textContent = orig.lv.toFixed(1);
             lv.classList.add("stat");
@@ -584,18 +589,18 @@ function init()
             crits.classList.add("stat");
             crits.classList.add("crits");
             crits.classList.add("clickable");
-            crits.oninput = function() {getCrits(i, diff)};
+            crits.oninput = function() {getCrits(i, diff);};
             const score = document.createElement("input");
             score.classList.add("stat");
             score.classList.add("score");
             score.classList.add("clickable");
-            score.oninput = function() {getScore(i, diff)};
+            score.oninput = function() {getScore(i, diff);};
             score.value = 0;
             const ct = document.createElement("span");
             ct.classList.add("stat");
             ct.classList.add("ct");
             ct.classList.add("clickable");
-            ct.onclick = function() {updateCt(i, diff)};
+            ct.onclick = function() {updateCt(i, diff);};
             const rate = document.createElement("span");
             rate.classList.add("stat");
             rate.classList.add("rate");
@@ -603,13 +608,13 @@ function init()
             ex.classList.add("stat");
             ex.classList.add("ex");
             ex.classList.add("clickable");
-            ex.oninput = function() {getEx(i, diff)};
+            ex.oninput = function() {getEx(i, diff);};
             ex.value = 0;
             const xp = document.createElement("input");
             xp.classList.add("stat");
             xp.classList.add("perc");
             xp.classList.add("clickable");
-            xp.oninput = function() {getXp(i, diff)};
+            xp.oninput = function() {getXp(i, diff);};
             const xr = document.createElement("span");
             xr.classList.add("stat");
             xr.classList.add("xrate");
@@ -617,6 +622,7 @@ function init()
             x.classList.add("stat");
             x.classList.add("ex");
             x.classList.add("clickable");
+            x.oninput = function() {data[i][diff].x = x.value;}
             x.value = 3 * orig.notes;
             li.appendChild(lv);
             li.appendChild(name);
