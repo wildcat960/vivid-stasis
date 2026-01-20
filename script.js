@@ -41,9 +41,9 @@ function updateRating()
             {
                 rate = orig.lv * 1000;
                 if (score < 950000)
-                    rate += (score - 1000000) / 50;
+                    rate += (score - 975000) / 50;
                 else if (score < 980000)
-                    rate += (score - 980000) / 30;
+                    rate += (score - 980000) / 60;
                 else if (score < 1000000)
                     rate += (score - 980000) / 20;
                 else if (score < 1008000)
@@ -822,3 +822,4 @@ function shuffleCharts()
         list.appendChild(i);
 
 }
+
