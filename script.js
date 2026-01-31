@@ -742,17 +742,17 @@ function sortBy(aa, bb, stat)
     if (xpA >= 80)
     {    
         if (xpA < 90)
-            rateA = 25 * xpA - 1750;
+            xrA = 25 * xpA - 1750;
         else if (xpA < 93)
-            rateA = (200 * xpA - 16500) / 3;
+            xrA = (200 * xpA - 16500) / 3;
         else if (xpA < 98)
-            rateA = 50 * xpA - 3950;
+            xrA = 50 * xpA - 3950;
         else if (xpA < 99)
-            rateA = 30 * xpA - 1990;
+            xrA = 30 * xpA - 1990;
         else if (xpA < 100)
-            rateA = 20 * xpA - 1000;
+            xrA = 20 * xpA - 1000;
         else
-            rateA = 1000;
+            xrA = 1000;
     }
     xrA *= Math.round(origA.lv * 100 / 9) / 100;
     const xpB = (100 * chartB.ex) / (3 * origB.notes);
@@ -760,17 +760,17 @@ function sortBy(aa, bb, stat)
     if (xpB >= 80)
     {    
         if (xpB < 90)
-            rateB = 25 * xpB - 1750;
+            xrB = 25 * xpB - 1750;
         else if (xpB < 93)
-            rateB = (200 * xpB - 16500) / 3;
+            xrB = (200 * xpB - 16500) / 3;
         else if (xpB < 98)
-            rateB = 50 * xpB - 3950;
+            xrB = 50 * xpB - 3950;
         else if (xpB < 99)
-            rateB = 30 * xpB - 1990;
+            xrB = 30 * xpB - 1990;
         else if (xpB < 100)
-            rateB = 20 * xpB - 1000;
+            xrB = 20 * xpB - 1000;
         else
-            rateB = 1000;
+            xrB = 1000;
     }
     xrB *= Math.round(origB.lv * 100 / 9) / 100;
     if (stat == "lv")
@@ -828,6 +828,4 @@ function shuffleCharts()
     }
     for (let i of charts)
         list.appendChild(i);
-
 }
-
