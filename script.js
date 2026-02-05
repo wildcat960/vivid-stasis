@@ -368,10 +368,7 @@ function save()
 function manual()
 {
     if (localStorage)
-    {
-        console.log(data, localStorage.data);
         localStorage.data = JSON.stringify(data);
-    }
     else
         alert("LOCAL STORAGE ERROR");
 }
@@ -406,11 +403,6 @@ function copyData(b)
                     {
                         li.children[7].value = b[i][j].ex;
                         updateEx(li, data[i][j], original[i][j]);
-                    }
-                    if (b[i][j].hasOwnProperty("x"))
-                    {
-                        li.children[10].value = b[i][j].x;
-                        data[i][j].x = parseInt(b[i][j].x);
                     }
                 }
             }
@@ -549,7 +541,6 @@ function loadPrefs(b)
 }
 function init()
 {
-    console.log(localStorage);
     document.getElementById("ver").textContent = ver;
     document.getElementById("upd").textContent = upd;
     const charts = document.getElementById("stats").children;
@@ -564,7 +555,7 @@ function init()
         data[i] = [];
         for (let j = 0; j < original[i].length; j++)
         {
-            data[i].push({crits: 101 * original[i][j].notes, ct: 0, ex: 0, x: 3 * original[i][j].notes});
+            data[i].push({crits: 101 * original[i][j].notes, ct: 0, ex: 0});
             byIndex[original[i][j].index] = [i, j];
         }
     }
@@ -624,12 +615,6 @@ function init()
             const xr = document.createElement("span");
             xr.classList.add("stat");
             xr.classList.add("xrate");
-            const x = document.createElement("input");
-            x.classList.add("stat");
-            x.classList.add("ex");
-            x.classList.add("clickable");
-            x.oninput = function() {data[i][diff].x = parseInt(x.value);}
-            x.value = 3 * orig.notes;
             li.appendChild(lv);
             li.appendChild(name);
             li.appendChild(notes);
@@ -640,7 +625,6 @@ function init()
             li.appendChild(ex);
             li.appendChild(xp);
             li.appendChild(xr);
-            li.appendChild(x);
             updateScore(li, data[i][diff], orig);
             updateEx(li, data[i][diff], orig);
             list.appendChild(li);
@@ -742,17 +726,17 @@ function sortBy(aa, bb, stat)
     if (xpA >= 80)
     {    
         if (xpA < 90)
-            xrA = 25 * xpA - 1750;
+            rateA = 25 * xpA - 1750;
         else if (xpA < 93)
-            xrA = (200 * xpA - 16500) / 3;
+            rateA = (200 * xpA - 16500) / 3;
         else if (xpA < 98)
-            xrA = 50 * xpA - 3950;
+            rateA = 50 * xpA - 3950;
         else if (xpA < 99)
-            xrA = 30 * xpA - 1990;
+            rateA = 30 * xpA - 1990;
         else if (xpA < 100)
-            xrA = 20 * xpA - 1000;
+            rateA = 20 * xpA - 1000;
         else
-            xrA = 1000;
+            rateA = 1000;
     }
     xrA *= Math.round(origA.lv * 100 / 9) / 100;
     const xpB = (100 * chartB.ex) / (3 * origB.notes);
@@ -760,17 +744,17 @@ function sortBy(aa, bb, stat)
     if (xpB >= 80)
     {    
         if (xpB < 90)
-            xrB = 25 * xpB - 1750;
+            rateB = 25 * xpB - 1750;
         else if (xpB < 93)
-            xrB = (200 * xpB - 16500) / 3;
+            rateB = (200 * xpB - 16500) / 3;
         else if (xpB < 98)
-            xrB = 50 * xpB - 3950;
+            rateB = 50 * xpB - 3950;
         else if (xpB < 99)
-            xrB = 30 * xpB - 1990;
+            rateB = 30 * xpB - 1990;
         else if (xpB < 100)
-            xrB = 20 * xpB - 1000;
+            rateB = 20 * xpB - 1000;
         else
-            xrB = 1000;
+            rateB = 1000;
     }
     xrB *= Math.round(origB.lv * 100 / 9) / 100;
     if (stat == "lv")
@@ -828,4 +812,6 @@ function shuffleCharts()
     }
     for (let i of charts)
         list.appendChild(i);
+
 }
+
