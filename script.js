@@ -380,7 +380,7 @@ function copyData(b)
         {
             for (let j = 0; j < b[i].length; j++)
             {
-                if (j < data[i].length)
+                if (j < original[i].length)
                 {
                     if (b[i][j].hasOwnProperty("ct"))
                     {

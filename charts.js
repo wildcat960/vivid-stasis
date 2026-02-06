@@ -1,5 +1,5 @@
-const ver = "vivid/stasis v5.5.1.1";
-const upd = "Last updated 05.02.2026";
+const ver = "vivid/stasis v5.5.1.1 buggy";
+const upd = "Last updated 06.02.2026";
 const packs = [0, 41, 86, 146, 181, 221, 269, 316, 320, 495, 608, 634];
 const original = 
 {
@@ -2485,7 +2485,7 @@ const original =
     "WATAGASHI RUSH":
     [
         {
-            index: 421,
+            index: 422,
             lv: 3.0,
             notes: 428
         },
