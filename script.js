@@ -151,7 +151,7 @@ function updateRating()
             cr += Math.pow((score - 710000) / 20000, 1.7005483075) * 10 / c;
         }
     }
-    cr /= 184;
+    cr /= 183;
     u[2].children[1].textContent = cr.toFixed(9);
     u[3].children[1].textContent = (lr + xr + cr).toFixed(9);
 }
@@ -814,4 +814,5 @@ function shuffleCharts()
         list.appendChild(i);
 
 }
+
 
