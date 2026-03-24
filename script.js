@@ -125,13 +125,13 @@ function updateRating()
     for (let i = 0; i < 30; i++)
         lr += Math.round(b30[i].rate);
     lr /= 30;
-    u[0].children[1].textContent = lr.toFixed(9);
+    u[0].children[1].textContent = lr.toFixed(6);
     let xr = 0;
     for (let i = 0; i < 10; i++)
         xr += Math.round(b10[i].rate);
     xr /= 10;
-    u[1].children[1].textContent = xr.toFixed(9);
-    let cr = 0;
+    u[1].children[1].textContent = xr.toFixed(6);
+    let cr = 0, cs = (2 / Math.log10(15));
     for (let i in original)
     {
         if (i == "acta est fabula, plaudite")
@@ -148,12 +148,15 @@ function updateRating()
             }
             if (score < 710000)
                 continue;
-            cr += Math.pow((score - 710000) / 20000, 1.7005483075) * 10 / c;
+            cr += Math.pow((score - 710000) / 20000, cs) * 10 / c;
         }
     }
-    cr /= 183;
-    u[2].children[1].textContent = cr.toFixed(9);
-    u[3].children[1].textContent = (lr + xr + cr).toFixed(9);
+    let v = -1;
+    for (let i in original)
+        v++;
+    cr /= v;
+    u[2].children[1].textContent = cr.toFixed(6);
+    u[3].children[1].textContent = (lr + xr + cr).toFixed(6);
 }
 function updateStats()
 {
@@ -186,6 +189,30 @@ function updateStats()
         countsT[0].textContent = Math.round(ctCounts[0][i]);
     }
 }
+function updateEx(li, chart, orig)
+{
+    const stats = li.children;
+    chart.ex = parseInt(stats[7].value);
+    const xp = (100 * chart.ex) / (3 * orig.notes);
+    stats[8].value = xp.toFixed(2);
+    let rate = 0;
+    if (xp >= 80)
+    {    
+        if (xp < 90)
+            rate = 25 * xp - 1750;
+        else if (xp < 93)
+            rate = (200 * xp - 16500) / 3;
+        else if (xp < 98)
+            rate = 50 * xp - 3950;
+        else if (xp < 99)
+            rate = 30 * xp - 1990;
+        else if (xp < 100)
+            rate = 20 * xp - 1000;
+        else
+            rate = 1000;
+    }
+    stats[9].textContent = Math.round(Math.round(orig.lv * 100 / 9) / 100 * rate);
+}
 function updateScore(li, chart, orig)
 {
     const stats = li.children;
@@ -212,6 +239,11 @@ function updateScore(li, chart, orig)
     else if (chart.ct)
         rate += 200;
     stats[3].value = chart.crits;
+    if (chart.ct > 1)
+    {
+        stats[7].value = 3 * orig.notes - chart.crits;
+        updateEx(li, chart, orig);
+    }
     stats[6].textContent = Math.round(rate);
 }
 function updateCrits(li, chart, orig)
@@ -241,6 +273,11 @@ function updateCrits(li, chart, orig)
     else if (chart.ct)
         rate += 200;
     stats[4].value = Math.round(score);
+    if (chart.ct > 1)
+    {
+        stats[7].value = 3 * orig.notes - chart.crits;
+        updateEx(li, chart, orig);
+    }
     stats[6].textContent = Math.round(rate);
 }
 function getScore(i, diff)
@@ -266,30 +303,6 @@ function getCrits(i, diff)
     updateCrits(li, chart, orig);
     if (localStorage)
         localStorage.data = JSON.stringify(data);
-}
-function updateEx(li, chart, orig)
-{
-    const stats = li.children;
-    chart.ex = parseInt(stats[7].value);
-    const xp = (100 * chart.ex) / (3 * orig.notes);
-    stats[8].value = xp.toFixed(2);
-    let rate = 0;
-    if (xp >= 80)
-    {    
-        if (xp < 90)
-            rate = 25 * xp - 1750;
-        else if (xp < 93)
-            rate = (200 * xp - 16500) / 3;
-        else if (xp < 98)
-            rate = 50 * xp - 3950;
-        else if (xp < 99)
-            rate = 30 * xp - 1990;
-        else if (xp < 100)
-            rate = 20 * xp - 1000;
-        else
-            rate = 1000;
-    }
-    stats[9].textContent = Math.round(Math.round(orig.lv * 100 / 9) / 100 * rate);
 }
 function updateXp(li, chart, orig)
 {
@@ -344,17 +357,22 @@ function updateCt(i, diff)
     const chart = data[i][diff];
     const orig = original[i][diff];
     const li = document.getElementById("c" + orig.index);
+    const stats = li.children;
     chart.ct++;
     if (chart.ct > 3)
     {
-        li.children[4].value = 0;
+        stats[3].value = 101 * orig.notes;
+        stats[7].value = 0;
         chart.ct = 0;
     }
     if (chart.ct == 3)
-        li.children[4].value = 1010000;
-    updateScore(li, chart, orig);
-    li.children[5].textContent = cts[chart.ct];
-    li.children[5].style.backgroundImage = ctColours[prefs[4]][chart.ct];
+        stats[3].value = 0;
+    if (chart.ct > 1)
+        stats[7].value = 3 * orig.notes - stats[3].value;
+    updateCrits(li, chart, orig);
+    updateEx(li, chart, orig);
+    stats[5].textContent = cts[chart.ct];
+    stats[5].style.backgroundImage = ctColours[prefs[4]][chart.ct];
     if (localStorage)
         localStorage.data = JSON.stringify(data);
 }
@@ -630,6 +648,8 @@ function init()
             list.appendChild(li);
         }
     }
+    if (0)
+        console.log(JSON.parse(localStorage.data)["APOCALYPSE CALL"][1].crits);
     try
     {
         copyData(JSON.parse(localStorage.data));
@@ -812,7 +832,4 @@ function shuffleCharts()
     }
     for (let i of charts)
         list.appendChild(i);
-
 }
-
-
