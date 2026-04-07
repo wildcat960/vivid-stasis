@@ -275,7 +275,7 @@ function updateCrits(li, chart, orig)
     stats[4].value = Math.round(score);
     if (chart.ct > 1)
     {
-        stats[7].value = 3 * orig.notes - chart.crits;
+        stats[7].value = Math.max(stats[7].value, 3 * orig.notes - chart.crits);
         updateEx(li, chart, orig);
     }
     stats[6].textContent = Math.round(rate);
@@ -368,7 +368,7 @@ function updateCt(i, diff)
     if (chart.ct == 3)
         stats[3].value = 0;
     if (chart.ct > 1)
-        stats[7].value = 3 * orig.notes - stats[3].value;
+        stats[7].value = max(stats[7].value, 3 * orig.notes - stats[3].value);
     updateCrits(li, chart, orig);
     updateEx(li, chart, orig);
     stats[5].textContent = cts[chart.ct];
