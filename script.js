@@ -29,7 +29,7 @@ function updateRating()
         b30.push({title: "N/A", rate: 0});
     for (let i in original)
     {
-        if (i == "acta est fabula, plaudite")
+        if (i == "acta est fabula, plaudite" || i == "SUPERNOVA ~Life Cycle of a Star~")
             continue;
         for (let j = 0; j < original[i].length; j++)
         {
@@ -79,7 +79,7 @@ function updateRating()
         b10.push({title: "N/A", rate: 0});
     for (let i in original)
     {
-        if (i == "acta est fabula, plaudite")
+        if (i == "acta est fabula, plaudite" || i == "SUPERNOVA ~Life Cycle of a Star~")
             continue;
         for (let j = 0; j < original[i].length; j++)
         {
@@ -134,7 +134,7 @@ function updateRating()
     let cr = 0, cs = (2 / Math.log10(15));
     for (let i in original)
     {
-        if (i == "acta est fabula, plaudite")
+        if (i == "acta est fabula, plaudite" || i == "SUPERNOVA ~Life Cycle of a Star")
             continue;
         const c = original[i].length;
         for (let j = 0; j < c; j++)
@@ -151,7 +151,7 @@ function updateRating()
             cr += Math.pow((score - 710000) / 20000, cs) * 10 / c;
         }
     }
-    let v = -1;
+    let v = -2;
     for (let i in original)
         v++;
     cr /= v;
@@ -275,7 +275,7 @@ function updateCrits(li, chart, orig)
     stats[4].value = Math.round(score);
     if (chart.ct > 1)
     {
-        stats[7].value = Math.max(chart.ex, 3 * orig.notes - chart.crits);
+        stats[7].value = Math.max(stats[7].value, 3 * orig.notes - chart.crits);
         updateEx(li, chart, orig);
     }
     stats[6].textContent = Math.round(rate);
@@ -368,7 +368,7 @@ function updateCt(i, diff)
     if (chart.ct == 3)
         stats[3].value = 0;
     if (chart.ct > 1)
-        stats[7].value = Math.max(chart.ex, 3 * orig.notes - stats[3].value);
+        stats[7].value = max(stats[7].value, 3 * orig.notes - stats[3].value);
     updateCrits(li, chart, orig);
     updateEx(li, chart, orig);
     stats[5].textContent = cts[chart.ct];
