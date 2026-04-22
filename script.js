@@ -134,7 +134,7 @@ function updateRating()
     let cr = 0, cs = (2 / Math.log10(15));
     for (let i in original)
     {
-        if (i == "acta est fabula, plaudite" || i == "SUPERNOVA ~Life Cycle of a Star")
+        if (i == "acta est fabula, plaudite" || i == "SUPERNOVA ~Life Cycle of a Star~")
             continue;
         const c = original[i].length;
         for (let j = 0; j < c; j++)
