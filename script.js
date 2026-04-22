@@ -390,8 +390,25 @@ function manual()
     else
         alert("LOCAL STORAGE ERROR");
 }
+function reset()
+{
+    for (let i in original)
+    {
+        for (let j = 0; j < original[i].length; j++)
+        {
+            const li = document.getElementById("c" + original[i][j].index);
+            li.children[4].value = 0;
+            data[i][j].ct = 0;
+            updateScore(li, data[i][j], original[i][j]);
+            li.children[7].value = 0;
+            updateEx(li, data[i][j], original[i][j]);
+        }
+    }
+    localStorage.data = JSON.stringify(data);
+}
 function copyData(b)
 {
+    reset();
     for (let i in b)
     {
         if (original.hasOwnProperty(i))
@@ -445,22 +462,7 @@ function load()
     else
         actuallyLoad(prompt());
 }
-function reset()
-{
-    for (let i in original)
-    {
-        for (let j = 0; j < original[i].length; j++)
-        {
-            const li = document.getElementById("c" + original[i][j].index);
-            li.children[4].value = 0;
-            data[i][j].ct = 0;
-            updateScore(li, data[i][j], original[i][j]);
-            li.children[7].value = 0;
-            updateEx(li, data[i][j], original[i][j]);
-        }
-    }
-    localStorage.data = JSON.stringify(data);
-}
+
 function toggleDiff(a)
 {
     prefs[a] = 1 - prefs[a];
