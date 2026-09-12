@@ -1,6 +1,6 @@
 const ver = "vivid/stasis v6.2.0 STILL UNSTABLE";
-const upd = "Last updated 18.05.2026";
-const packs = [0, 41, 86, 147, 183, 223, 270, 319, 375, 560, 673, 699];
+const upd = "Last updated 12.09.2026";
+const packs = [0, 41, 86, 147, 183, 223, 270, 319, 347, 375, 560, 673, 699];
 const original = 
 {
     "grode":
@@ -1118,7 +1118,7 @@ const original =
         {
             index: 189,
             lv: 12.5,
-            notes: 1263
+            notes: 1264
         }
     ],
     "Nhelv":

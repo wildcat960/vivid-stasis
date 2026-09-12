@@ -1,10 +1,11 @@
 const byIndex = [];
-const prefs = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4];
+const prefs = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4];
+const sdf = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 11.5, 12, 12.5, 13, 13.5, 14, 14.5, 15, 15.5, 16, 16.5, 17, 17.5];
 const data = {};
 const cts = ["", "FC", "AC", "AAC"];
 const ctCounts = [[0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]];
 const colours = ["#1aff55", "#1ab9ff", "#ff1a4a", "#c342ff", "#000000"];
-const tabs = [["charts", "block"], ["rating", "block"], ["stats", "flex"], ["save", "flex"], ["info", "block"]];
+const tabs = [["charts", "block"], ["rating", "block"], ["stats", "block"], ["save", "flex"], ["info", "block"]];
 const ctColours =
 [
     [
@@ -160,33 +161,38 @@ function updateRating()
 }
 function updateStats()
 {
-    for (let i = 0; i < 6; i++)
+    for (let h = 0; h < 25; h++)
     {
-        for (let j = 0; j < 5; j++)
-            ctCounts[i][j] = 0;
-    }
-    for (let i in original)
-    {
-        for (let j = 0; j < original[i].length; j++)
+        for (let i = 0; i < 6; i++)
         {
-            for (let k = 5 - data[i][j].ct; k < 6; k++)
-                ctCounts[k][j]++;
-            ctCounts[1][j] += data[i][j].crits;
-            ctCounts[0][j] += 1010000 - data[i][j].crits * 10000 / original[i][j].notes;
+            for (let j = 0; j < 5; j++)
+                ctCounts[i][j] = 0;
         }
-    }
-    for (let i = 0; i < 6; i++)
-    {
-        for (let j = 0; j < 4; j++)
-            ctCounts[i][4] += ctCounts[i][j];
-    }
-    const counts = document.getElementById("stats").children;
-    for (let i = 0; i < 5; i++)
-    {
-        const countsT = counts[i + 1].children;
-        for (let j = 1; j < 6; j++)
-            countsT[j].textContent = ctCounts[j][i];
-        countsT[0].textContent = Math.round(ctCounts[0][i]);
+        for (let i in original)
+        {
+            for (let j = 0; j < original[i].length; j++)
+            {
+                if (h && (original[i][j].lv < sdf[h - 1] || original[i][j].lv >= sdf[h]))
+                    continue;
+                for (let k = 5 - data[i][j].ct; k < 6; k++)
+                    ctCounts[k][j]++;
+                ctCounts[1][j] += data[i][j].crits;
+                ctCounts[0][j] += 1010000 - data[i][j].crits * 10000 / original[i][j].notes;
+            }
+        }
+        for (let i = 0; i < 6; i++)
+        {
+            for (let j = 0; j < 4; j++)
+                ctCounts[i][4] += ctCounts[i][j];
+        }
+        const counts = document.getElementById("stats").children[h + (h != 0)].children;
+        for (let i = 0; i < 5; i++)
+        {
+            const countsT = counts[i + 1].children;
+            for (let j = 1; j < 6; j++)
+                countsT[j].textContent = ctCounts[j][i];
+            countsT[0].textContent = Math.round(ctCounts[0][i]);
+        }
     }
 }
 function updateEx(li, chart, orig)
@@ -462,7 +468,6 @@ function load()
     else
         actuallyLoad(prompt());
 }
-
 function toggleDiff(a)
 {
     prefs[a] = 1 - prefs[a];
@@ -494,7 +499,7 @@ function toggleDiff(a)
             const li = document.getElementById("c" + orig.index);
             if (prefs[j] && prefs[chart.ct + 5])
             {
-                for (let k = 0; k < 11; k++)
+                for (let k = 0; k < 12; k++)
                 {
                     if (packs[k] <= orig.index && orig.index < packs[k + 1])
                     {
@@ -511,13 +516,20 @@ function toggleDiff(a)
             li.children[5].style.backgroundImage = ctColours[prefs[4]][chart.ct];
         }
     }
-    const charts = document.getElementById("stats").children[0].children;
+    const charts = document.getElementById("stats").children;
     for (let i = 0; i < 4; i++)
-        charts[i + 2].style.backgroundImage = ctColours[prefs[4]][3 - i];
+        charts[0].children[0].children[i + 2].style.backgroundImage = ctColours[prefs[4]][3 - i];
     for (let i = 0; i < 4; i++)
     {
         if (prefs[i + 5])
             document.getElementById("pref" + (i + 5)).style.backgroundImage = ctColours[prefs[4]][i];
+    }
+    for (let i = 0; i < 24; i++)
+    {
+        if (prefs[i + 21])
+            charts[i + 2].style.display = "flex";
+        else
+            charts[i + 2].style.display = "none";
     }
 }
 function switchTab(a)
@@ -563,11 +575,17 @@ function init()
     document.getElementById("ver").textContent = ver;
     document.getElementById("upd").textContent = upd;
     const charts = document.getElementById("stats").children;
-    const chartsT = charts[0].children;
+    const chartsT = charts[0].children[0].children;
     for (let i = 0; i < 4; i++)
-    {
-        charts[i + 1].style.color = colours[i];
         chartsT[i + 2].style.backgroundImage = ctColours[prefs[4]][3 - i];
+    for (let h = 0; h < 26; h++)
+    {
+        if (h == 1)
+            continue;
+        if (h)
+            charts[h].children[0].style.backgroundColor = "grey";
+        for (let i = 0; i < 4; i++)
+            charts[h].children[i + 1].style.color = colours[i];
     }
     for (let i in original)
     {

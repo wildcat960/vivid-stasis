@@ -21,6 +21,7 @@ body
 .diffs
 {
     display: flex;
+    flex-direction: row !important;
     border: 2px solid white;
     text-align: center;
     margin: 0 0 20px 0;
@@ -147,7 +148,7 @@ button:hover
     border: 4px solid black;
     color: black;
 }
-#stats
+#stats > div
 {
     text-align: center;
     margin: 40px 0 80px 0;
@@ -155,11 +156,11 @@ button:hover
     display: flex;
     flex-direction: column;
 }
-#stats > div
+#stats > div > div
 {
     display: flex;
 }
-#stats > div > span
+#stats > div > div > span
 {
     padding: 10px 20px;
     border: 2px solid white;
